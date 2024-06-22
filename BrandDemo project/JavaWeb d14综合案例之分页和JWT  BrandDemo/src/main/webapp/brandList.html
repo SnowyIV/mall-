@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    设置css样式，-->
+    <style>
+        .el-table .warning-row {
+            background: oldlace;
+        }
+
+        .el-table .success-row {
+            background: #f0f9eb;
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+
+    <!--elementUI 表单组件  顶部 搜索表单
+    :model 设置这个表单和哪个数据绑定
+    -->
+    <el-form :inline="true" :model="brand" class="demo-form-inline">
+
+        <el-form-item label="当前状态">
+            <!--            下拉框  placeholder  默认显示文字
+            v-model="brand.status"  当下拉框选择发生变化的时候，选中的值被填充到哪个变量
+            -->
+            <el-select v-model="brand.status" placeholder="当前状态">
+                <el-option label="启用" value="1"></el-option>
+                <el-option label="禁用" value="0"></el-option>
+            </el-select>
+        </el-form-item>
+
+        <el-form-item label="企业名称">
+            <el-input v-model="brand.companyName" placeholder="企业名称"></el-input>
+        </el-form-item>
+
+        <el-form-item label="品牌名称">
+            <el-input v-model="brand.brandName" placeholder="品牌名称"></el-input>
+        </el-form-item>
+
+        <el-form-item>
+            <el-button type="primary" @click="onSearch">查询</el-button>
+        </el-form-item>
+    </el-form>
+
+    <!--按钮-->
+
+    <el-row>
+
+        <el-button type="danger" plain @click="batchDelete()" >批量删除</el-button>
+        <!-- 点击新增，显示新增对话框 -->
+        <el-button type="primary" plain @click="dialogVisible = true">新增</el-button>
+
+    </el-row>
+    <!--添加数据对话框表单
+        :visible.sync   此对话框 是否显示取决于一个变量dialogVisible
+    -->
+    <el-dialog
+            :title="dialogTitle"
+            :visible.sync="dialogVisible"
+            width="30%"
+    >
+        <!-- model实现双向绑定
+            绑定到了一个brand变量身上
+        -->
+        <el-form ref="form" :model="brandForAdd" label-width="80px">
+            <!-- 名称输入框 brandName属性相互绑定 -->
+            <el-form-item label="品牌名称">
+                <el-input v-model="brandForAdd.brandName"></el-input>
+            </el-form-item>
+
+            <el-form-item label="企业名称">
+                <el-input v-model="brandForAdd.companyName"></el-input>
+            </el-form-item>
+
+            <el-form-item label="排序">
+                <el-input v-model="brandForAdd.ordered"></el-input>
+            </el-form-item>
+
+            <el-form-item label="备注">
+                <el-input type="textarea" v-model="brandForAdd.description"></el-input>
+            </el-form-item>
+
+            <el-form-item label="状态">
+                <!--                单选框-->
+                <el-switch v-model="brandForAdd.status"
+                           :active-value="1"
+                           :inactive-value="0"
+                ></el-switch>
+            </el-form-item>
+
+
+            <el-form-item>
+                <el-button type="primary" @click="addBrand">提交</el-button>
+                <el-button @click="dialogVisible = false">取消</el-button>
+            </el-form-item>
+        </el-form>
+
+    </el-dialog>
+
+
+    <!--elementUI 表格组件
+        :data 设置 表格数据绑定
+        表格要显示的数据是谁
+
+        @selection-change= 当表格的行 复选框勾选发生变化的时候 会触发的函数
+    -->
+    <template>
+        <el-table
+                :data="myTableData"
+                style="width: 100%"
+                :row-class-name="tableRowClassName"
+                @selection-change="handleSelectionChange">
+            <!--            表格的列
+                    type="selection"  类型是复选框
+                    -->
+            <el-table-column
+                    type="selection"
+                    width="55">
+            </el-table-column>
+            <!--             显示序号-->
+            <el-table-column
+                    type="index"
+                    width="50">
+            </el-table-column>
+            <!--         prop="brandName"  设置此列显示哪个属性值  -->
+            <el-table-column
+                    prop="brandName"
+                    label="品牌名称"
+                    align="center"
+            >
+            </el-table-column>
+            <el-table-column
+                    prop="companyName"
+                    label="企业名称"
+                    align="center"
+            >
+            </el-table-column>
+            <el-table-column
+                    prop="ordered"
+                    align="center"
+                    label="排序">
+            </el-table-column>
+            <el-table-column
+                    prop="status"
+                    align="center"
+                    label="当前状态">
+            </el-table-column>
+
+            <el-table-column
+                    align="center"
+                    label="操作">
+                <!--                用来定义变量 指向当前这一行数据 -->
+                <template slot-scope="scope">
+                    <el-row>
+                        <el-button type="primary" @click="onEditBrand(0, scope.row)">修改</el-button>
+                        <el-button type="danger" @click="onDeleteBrand(scope.row)">删除</el-button>
+                    </el-row>
+                </template>
+            </el-table-column>
+
+        </el-table>
+    </template>
+
+    <!--ElementUI提供的  分页工具条
+            @size-change:  当修改每页显示记录条数的时候 会触发的函数
+            @current-change : 当  当前页变化时候 会触发的函数
+            current-page: 当前指向第几页
+            page-size:每页显示多少条
+            layout: 设置分页组件的 显示哪些按钮   jumper 跳转页面
+            total:  总记录条数
+    -->
+    <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleMyCurrentChange"
+            :current-page="currentPage"
+            :page-sizes="[5, 10, 15, 20]"
+            :page-size="5"
+
+            layout="total, sizes, prev, pager, next, jumper"
+
+            :total="totalRows">
+    </el-pagination>
+
+</div>
+
+
+<script src="js/vue.js"></script>
+<!-- UI美化 -->
+<script src="element-ui/lib/index.js"></script>
+<link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+<!--  http框架 -->
+<script src="js/axios-0.18.0.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        //vue提供的回调方法
+        mounted() {
+            // 页面加载完成后，发送异步请求，查询数据
+            this.searchAll(1)
+        },
+        //自定义方法放在methods下
+        methods: {
+
+            searchAll(pageNo) {
+                var _this = this;
+                axios({
+                    method: "get",
+                    url: "http://localhost:8080/BrandDemo/brandList?pageNo="+pageNo+"&pageSize="+_this.pageSize
+                }).then(function (resp) {
+                    _this.myTableData = resp.data.brands;
+                    _this.totalRows = resp.data.count;
+                })
+            },
+            //表格的样式风格控制
+            tableRowClassName({row, rowIndex}) {
+                if (rowIndex === 1) {
+                    return 'warning-row';
+                } else if (rowIndex === 3) {
+                    return 'success-row';
+                }
+                return '';
+            },
+            // 复选框选中后执行的方法
+            //val参数 携带就是当前都选中了哪些
+            handleSelectionChange(val) {
+                var _this = this;
+                _this.multipleSelection = val;
+
+            },
+            // 查询方法
+            onSearch() {
+                var _this = this;
+                //在浏览器控制台显示brand对象的值
+                // 执行搜索，把brand对象收到的三个属性值 发送给后端接口
+                console.log("search: " + _this.brand);
+                axios({
+                    method: "post",
+                    url: "http://localhost:8080/BrandDemo/searchBrand",
+                    data: _this.brand
+                }).then(function (resp) {
+                    // 判断响应数据是否为 success
+                    //搜索返回数据
+                    _this.myTableData = resp.data;
+                })
+            },
+            //提交 添加或者编辑数据
+            addBrand() {
+                var _this = this;
+                //隐藏新增对话框
+                _this.dialogVisible = false;
+                console.log(_this.brandForAdd);
+                var toUrl = "http://localhost:8080/BrandDemo/addBrand";
+                if (_this.dialogType == "0") {
+                    //编辑
+                    toUrl = "http://localhost:8080/BrandDemo/updateBrand";
+                }
+                //alert(toUrl);
+                // 把表单数据 发送给后端接口
+                // 要提交的数据都在brandForAdd身上了， 可以用http请求 发送post请求  发给 servlet
+                axios({
+                    method: "post",
+                    url: toUrl,
+                    data: _this.brandForAdd
+                }).then(function (resp) {
+                    // 判断响应数据是否为 success
+                    //清除对象数据，避免下次打开新增对话框有数据残留
+                    _this.brandForAdd = {};
+                    if (resp.data == "ok") {
+                        //重新获取 所有数据
+                        _this.$message({
+                            message: '操作成功',
+                            type: 'success'
+                        });
+                        _this.searchAll(1)
+                    } else {
+                        _this.$message({
+                            message: '操作失败',
+                            type: 'fail'
+                        });
+                    }
+                })
+
+
+            },
+            //点击修改后弹出对话框
+            // 调用 row 编辑按钮所在行的数据
+            onEditBrand(dialogType, row) {
+                var _this = this;
+                _this.dialogTitle = "编辑";
+                // 显示修改对话框
+
+                _this.dialogVisible = true;
+                _this.brandForAdd = row;
+                //标识 当前对话框表单 提交 要做的是更新操作
+                _this.dialogType = dialogType;
+                console.log(" 编辑状态:" + _this.brandForAdd.status);
+            },
+            //点击删除后调用
+            onDeleteBrand(row) {
+                var _this = this;
+                // 获取当前行数据
+                console.log(row.id);
+                //todo: 用axios 发送请求到servlet，servlet执行 根据id删除，成功后查询所有
+                axios({
+                    method: "get",
+                    url: "http://localhost:8080/BrandDemo/delete?id=" + row.id
+
+                }).then(function (resp) {
+                    // 判断响应数据是否为 success
+                    if (resp.data == "ok") {
+                        _this.$message({
+                            message: '操作成功',
+                            type: 'success'
+                        });
+                        _this.searchAll(1)
+                    } else {
+                        _this.$message({
+                            message: '操作失败',
+                            type: 'fail'
+                        });
+                    }
+                })
+            },
+            //批量删除
+            batchDelete() {
+                var _this = this;
+                //保存被选中的id
+                //[] 代表是数组类型    {} 表示  vue 对象
+                var ids = [];
+                for (var i = 0;i<_this.multipleSelection.length; i++){
+                    // console.log(_this.multipleSelection[i].id);
+                    ids[i] = _this.multipleSelection[i].id;
+                }
+                console.log(ids)
+                //todo: 向后端提交数据 把ids 当作data 以post方式提交
+                axios({
+                    method: "post",
+                    url: "http://localhost:8080/BrandDemo/deleteBatch",
+                    data: ids
+                }).then(function (resp) {
+                    // 判断响应数据是否为 success
+                    if (resp.data == "ok") {
+                        //重新获取 所有数据
+                        _this.$message({
+                            message: '操作成功',
+                            type: 'success'
+                        });
+                        _this.searchAll(1)
+                    } else {
+                        _this.$message({
+                            message: '操作失败',
+                            type: 'fail'
+                        });
+                    }
+                })
+            },
+            //分页
+            handleSizeChange(val) {
+                console.log(`每页 ${val} 条`);
+                this.pageSize = val;
+                this.searchAll(1)
+            },
+            handleMyCurrentChange(val) {
+               // 根据 要查看第几页 ，把页码发给后端
+                // 后端根据页码查询这一页的数据
+                // 同时返回总记录条数
+                console.log(`当前页: ${val}`);
+                this.searchAll(val)
+            }
+
+        },
+        //Vue变量定义
+        data() {
+            return {
+                // 当前页码
+                currentPage: 1,
+                totalRows: 0,
+                pageSize: 5,
+                // 添加数据对话框是否展示的标记  默认不显示新增的对话框
+                dialogVisible: false,
+                dialogTitle: "新增品牌",
+                dialogType: 1,// 1 新增  0 编辑
+                //Vue model 品牌模型数据  和 新增对话框 ，你输入的信息，会被保存到brand变量 属性上
+                brand: {
+                    status: '',
+                    brandName: '',
+                    companyName: ''
+                },
+                //用于新增的模型变量 vue对象
+                brandForAdd: {
+                    status: '',
+                    brandName: '',
+                    companyName: '',
+                    id: "",
+                    ordered: "",
+                    description: ""
+                },
+                // 复选框选中数据集合
+                multipleSelection: [],
+                // 表格数据   数组
+                myTableData: []
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

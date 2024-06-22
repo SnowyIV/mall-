@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    设置css样式，-->
+    <style>
+        .el-table .warning-row {
+            background: oldlace;
+        }
+
+        .el-table .success-row {
+            background: #f0f9eb;
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+
+    <!--elementUI 表单组件  顶部 搜索表单
+    :model 设置这个表单和哪个数据绑定
+    -->
+    <el-form :inline="true" :model="brand" class="demo-form-inline">
+
+        <el-form-item label="当前状态">
+            <!--            下拉框  placeholder  默认显示文字
+            v-model="brand.status"  当下拉框选择发生变化的时候，选中的值被填充到哪个变量
+            -->
+            <el-select v-model="brand.status" placeholder="当前状态">
+                <el-option label="启用" value="1"></el-option>
+                <el-option label="禁用" value="0"></el-option>
+            </el-select>
+        </el-form-item>
+
+        <el-form-item label="企业名称">
+            <el-input v-model="brand.companyName" placeholder="企业名称"></el-input>
+        </el-form-item>
+
+        <el-form-item label="品牌名称">
+            <el-input v-model="brand.brandName" placeholder="品牌名称"></el-input>
+        </el-form-item>
+
+        <el-form-item>
+            <el-button type="primary" @click="onSearch">查询</el-button>
+        </el-form-item>
+    </el-form>
+
+    <!--按钮-->
+
+    <el-row>
+
+        <el-button type="danger" plain>批量删除</el-button>
+        <!-- 点击新增，显示新增对话框 -->
+        <el-button type="primary" plain @click="dialogVisible = true">新增</el-button>
+
+    </el-row>
+    <!--添加数据对话框表单
+        :visible.sync   此对话框 是否显示取决于一个变量dialogVisible
+    -->
+    <el-dialog
+            title="新增品牌"
+            :visible.sync="dialogVisible"
+            width="30%"
+    >
+        <!-- model实现双向绑定
+            绑定到了一个brand变量身上
+        -->
+        <el-form ref="form" :model="brand" label-width="80px">
+            <!-- 名称输入框 brandName属性相互绑定 -->
+            <el-form-item label="品牌名称">
+                <el-input v-model="brand.brandName"></el-input>
+            </el-form-item>
+
+            <el-form-item label="企业名称">
+                <el-input v-model="brand.companyName"></el-input>
+            </el-form-item>
+
+            <el-form-item label="排序">
+                <el-input v-model="brand.ordered"></el-input>
+            </el-form-item>
+
+            <el-form-item label="备注">
+                <el-input type="textarea" v-model="brand.description"></el-input>
+            </el-form-item>
+
+            <el-form-item label="状态">
+                <!--                单选框-->
+                <el-switch v-model="brand.status"
+                           active-value="1"
+                           inactive-value="0"
+                ></el-switch>
+            </el-form-item>
+
+
+            <el-form-item>
+                <el-button type="primary" @click="addBrand">提交</el-button>
+                <el-button @click="dialogVisible = false">取消</el-button>
+            </el-form-item>
+        </el-form>
+
+    </el-dialog>
+
+
+    <!--elementUI 表格组件
+        :data 设置 表格数据绑定
+        表格要显示的数据是谁
+    -->
+    <template>
+        <el-table
+                :data="myTableData"
+                style="width: 100%"
+                :row-class-name="tableRowClassName"
+                @selection-change="handleSelectionChange">
+            <!--            表格的列
+                    type="selection"  类型是复选框
+                    -->
+            <el-table-column
+                    type="selection"
+                    width="55">
+            </el-table-column>
+            <!--             显示序号-->
+            <el-table-column
+                    type="index"
+                    width="50">
+            </el-table-column>
+            <!--         prop="brandName"  设置此列显示哪个属性值  -->
+            <el-table-column
+                    prop="brandName"
+                    label="品牌名称"
+                    align="center"
+            >
+            </el-table-column>
+            <el-table-column
+                    prop="companyName"
+                    label="企业名称"
+                    align="center"
+            >
+            </el-table-column>
+            <el-table-column
+                    prop="ordered"
+                    align="center"
+                    label="排序">
+            </el-table-column>
+            <el-table-column
+                    prop="status"
+                    align="center"
+                    label="当前状态">
+            </el-table-column>
+
+            <el-table-column
+                    align="center"
+                    label="操作">
+
+                <el-row>
+                    <el-button type="primary">修改</el-button>
+                    <el-button type="danger">删除</el-button>
+                </el-row>
+
+            </el-table-column>
+
+        </el-table>
+    </template>
+
+    <!--ElementUI提供的  分页工具条
+            @size-change:  当修改每页显示记录条数的时候 会触发的函数
+            @current-change : 当  当前页变化时候 会触发的函数
+            current-page: 当前指向第几页
+            page-size:每页显示多少条
+            layout: 设置分页组件的 显示哪些按钮   jumper 跳转页面
+            total:  总记录条数
+    -->
+    <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleMyCurrentChange"
+            :current-page="currentPage"
+            :page-sizes="[5, 10, 15, 20]"
+            :page-size="5"
+
+            layout="total, sizes, prev, pager, next, jumper"
+
+            :total="400">
+    </el-pagination>
+
+</div>
+
+
+<script src="js/vue.js"></script>
+<script src="element-ui/lib/index.js"></script>
+<link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+<script src="js/axios-0.18.0.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        methods: {
+            mounted(){
+                // 页面加载完成后，发送异步请求，查询数据
+                this.searchAll()
+            },
+            searchAll(){
+                var _this = this;
+                axios({
+                    method:"get",
+                    url:"http://localhost:8080 /brandDemo/SearchServlet"
+                }).then(function (resp) {
+                    _this.myTableData = resp.data;
+                })
+            },
+            //表格的样式风格控制
+            tableRowClassName({row, rowIndex}) {
+                if (rowIndex === 1) {
+                    return 'warning-row';
+                } else if (rowIndex === 3) {
+                    return 'success-row';
+                }
+                return '';
+            },
+            // 复选框选中后执行的方法
+            handleSelectionChange(val) {
+                this.multipleSelection = val;
+
+                console.log(this.multipleSelection)
+            },
+            // 查询方法
+            onSearch() {
+                var _this = this;
+                //在浏览器控制台显示brand对象的值
+                // 执行搜索，把brand对象收到的三个属性值 发送给后端接口
+                console.log("search: "+ _this.brand);
+                axios({
+                    method:"post",
+                    url:"http://localhost:8080/BrandDemo/searchBrand",
+                    data:_this.brand
+                }).then(function (resp) {
+                    // 判断响应数据是否为 success
+                    //搜索返回数据
+                    _this.myTableData = resp.data;
+                })
+            },
+            // 添加数据
+            addBrand(){
+                var _this = this;
+                // 要提交的数据都在brand身上了， 可以用http请求 发送post请求  发给 servlet
+                console.log(_this.brand);
+                axios({
+                    method:"post",
+                    url:"http://localhost:8080/BrandDemo/addBrand",
+                    data:_this.brand
+                }).then(function (resp) {
+                    return 'success';
+            })
+            },
+            //分页
+            handleSizeChange(val) {
+                console.log(`每页 ${val} 条`);
+            },
+            handleMyCurrentChange(val) {
+                console.log(`当前页: ${val}`);
+            }
+
+        },
+        //Vue变量定义
+        data() {
+            return {
+                // 当前页码
+                currentPage: 1,
+                // 添加数据对话框是否展示的标记  默认不显示新增的对话框
+                dialogVisible: false,
+
+                //Vue model 品牌模型数据  和 新增对话框 ，你输入的信息，会被保存到brand变量 属性上
+                brand: {
+                    status: '',
+                    brandName: '',
+                    companyName: '',
+                    id:"",
+                    ordered:"",
+                    description:""
+                },
+                // 复选框选中数据集合
+                multipleSelection: [],
+                // 表格数据   数组
+                myTableData: []
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>
