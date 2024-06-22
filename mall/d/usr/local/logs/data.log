@@ -1,0 +1,871 @@
+2024-02-02 00:14:02.159 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-02 00:14:02.171 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-02 00:16:57.740 [main] INFO  com.geekaca.mall.MallApplication - Starting MallApplication using Java 17.0.8 on DESKTOP-GTFF48C with PID 26568 (D:\java\mall\target\classes started by 74168 in D:\java\mall)
+2024-02-02 00:16:57.744 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2024-02-02 00:16:57.746 [main] INFO  com.geekaca.mall.MallApplication - The following 1 profile is active: "dev"
+2024-02-02 00:16:59.287 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 28019 (http)
+2024-02-02 00:16:59.291 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:16:59.295 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-02 00:16:59.295 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.80]
+2024-02-02 00:16:59.435 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-02 00:16:59.435 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1620 ms
+2024-02-02 00:17:00.550 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:17:00.578 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 28019 (http) with context path ''
+2024-02-02 00:17:00.970 [main] INFO  com.geekaca.mall.MallApplication - Started MallApplication in 3.766 seconds (JVM running for 4.788)
+2024-02-02 00:17:06.431 [http-nio-28019-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-02 00:17:06.431 [http-nio-28019-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-02 00:17:06.433 [http-nio-28019-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-02-02 00:17:06.648 [http-nio-28019-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-02 00:17:06.824 [http-nio-28019-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-02 00:17:06.831 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_info
+2024-02-02 00:17:06.856 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==> Parameters: 
+2024-02-02 00:17:06.888 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectGoodsCountByCondition - <==      Total: 1
+2024-02-02 00:17:06.894 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==>  Preparing: SELECT goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time FROM tb_newbee_mall_goods_info order by create_time desc limit ?, ?
+2024-02-02 00:17:06.896 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2024-02-02 00:17:06.908 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectGoodsListByCondition - <==      Total: 10
+2024-02-02 00:17:06.975 [http-nio-28019-exec-3] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240129_22593659.png
+2024-02-02 00:17:06.981 [http-nio-28019-exec-4] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20191124_18032027.png
+2024-02-02 00:17:06.981 [http-nio-28019-exec-5] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /admin/dist/img/no-img.png
+2024-02-02 00:17:08.999 [http-nio-28019-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `[Ljava.lang.Long;` from Object value (token `JsonToken.START_OBJECT`); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `[Ljava.lang.Long;` from Object value (token `JsonToken.START_OBJECT`)<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 1]]
+2024-02-02 00:17:55.572 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-02 00:17:55.584 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-02 00:18:02.367 [main] INFO  com.geekaca.mall.MallApplication - Starting MallApplication using Java 17.0.8 on DESKTOP-GTFF48C with PID 24316 (D:\java\mall\target\classes started by 74168 in D:\java\mall)
+2024-02-02 00:18:02.367 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2024-02-02 00:18:02.369 [main] INFO  com.geekaca.mall.MallApplication - The following 1 profile is active: "dev"
+2024-02-02 00:18:03.920 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 28019 (http)
+2024-02-02 00:18:03.929 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:18:03.929 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-02 00:18:03.929 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.80]
+2024-02-02 00:18:04.074 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-02 00:18:04.074 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1652 ms
+2024-02-02 00:18:05.212 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:18:05.237 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 28019 (http) with context path ''
+2024-02-02 00:18:05.601 [main] INFO  com.geekaca.mall.MallApplication - Started MallApplication in 3.7 seconds (JVM running for 4.847)
+2024-02-02 00:19:34.858 [http-nio-28019-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-02 00:19:34.859 [http-nio-28019-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-02 00:19:34.862 [http-nio-28019-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-02-02 00:19:35.064 [http-nio-28019-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-02 00:19:35.230 [http-nio-28019-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-02 00:19:35.237 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_info
+2024-02-02 00:19:35.263 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==> Parameters: 
+2024-02-02 00:19:35.291 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsCountByCondition - <==      Total: 1
+2024-02-02 00:19:35.298 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==>  Preparing: SELECT goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time FROM tb_newbee_mall_goods_info order by create_time desc limit ?, ?
+2024-02-02 00:19:35.299 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2024-02-02 00:19:35.311 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsListByCondition - <==      Total: 10
+2024-02-02 00:19:35.387 [http-nio-28019-exec-5] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /admin/dist/img/no-img.png
+2024-02-02 00:19:35.387 [http-nio-28019-exec-3] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240129_22593659.png
+2024-02-02 00:19:35.387 [http-nio-28019-exec-4] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20191124_18032027.png
+2024-02-02 00:19:37.323 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.updateSellStatus - ==>  Preparing: update tb_newbee_mall_goods_info set goods_sell_status = ? where goods_id in ( ? )
+2024-02-02 00:19:37.327 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.updateSellStatus - ==> Parameters: 1(Integer), 20056(Long)
+2024-02-02 00:19:37.341 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.updateSellStatus - <==    Updates: 1
+2024-02-02 00:19:37.360 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_info
+2024-02-02 00:19:37.361 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==> Parameters: 
+2024-02-02 00:19:37.363 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsCountByCondition - <==      Total: 1
+2024-02-02 00:19:37.364 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==>  Preparing: SELECT goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time FROM tb_newbee_mall_goods_info order by create_time desc limit ?, ?
+2024-02-02 00:19:37.365 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2024-02-02 00:19:37.380 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsListByCondition - <==      Total: 10
+2024-02-02 00:30:00.663 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-02 00:30:00.683 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-02 00:30:09.691 [main] INFO  com.geekaca.mall.MallApplication - Starting MallApplication using Java 17.0.8 on DESKTOP-GTFF48C with PID 22996 (D:\java\mall\target\classes started by 74168 in D:\java\mall)
+2024-02-02 00:30:09.691 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2024-02-02 00:30:09.695 [main] INFO  com.geekaca.mall.MallApplication - The following 1 profile is active: "dev"
+2024-02-02 00:30:11.198 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 28019 (http)
+2024-02-02 00:30:11.202 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:30:11.206 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-02 00:30:11.206 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.80]
+2024-02-02 00:30:11.350 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-02 00:30:11.350 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1601 ms
+2024-02-02 00:30:12.445 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:30:12.469 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 28019 (http) with context path ''
+2024-02-02 00:30:12.845 [main] INFO  com.geekaca.mall.MallApplication - Started MallApplication in 3.6 seconds (JVM running for 4.87)
+2024-02-02 00:30:24.489 [http-nio-28019-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-02 00:30:24.489 [http-nio-28019-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-02 00:30:24.489 [http-nio-28019-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-02-02 00:30:24.560 [http-nio-28019-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-02 00:30:24.725 [http-nio-28019-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-02 00:30:24.729 [http-nio-28019-exec-1] DEBUG c.g.m.m.OrderMapper.selectByStatus - ==>  Preparing: SELECT torder.create_time, torder.order_id, torder.user_id, torder.total_price, torder.order_status, torder.order_no, torder.pay_type, item.order_item_id, item.goods_name, item.goods_cover_img, item.goods_count, item.selling_price FROM tb_newbee_mall_order torder, tb_newbee_mall_order_item item WHERE torder.order_id = item.order_id ORDER BY create_time DESC limit ?, ?
+2024-02-02 00:30:24.753 [http-nio-28019-exec-1] DEBUG c.g.m.m.OrderMapper.selectByStatus - ==> Parameters: 0(Integer), 10(Integer)
+2024-02-02 00:30:24.781 [http-nio-28019-exec-1] DEBUG c.g.m.m.OrderMapper.selectByStatus - <==      Total: 10
+2024-02-02 00:30:24.785 [http-nio-28019-exec-1] DEBUG c.g.m.m.O.selectCountByStatus - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_order
+2024-02-02 00:30:24.785 [http-nio-28019-exec-1] DEBUG c.g.m.m.O.selectCountByStatus - ==> Parameters: 
+2024-02-02 00:30:24.789 [http-nio-28019-exec-1] DEBUG c.g.m.m.O.selectCountByStatus - <==      Total: 1
+2024-02-02 00:30:26.543 [http-nio-28019-exec-2] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /manage-api/v1/users
+2024-02-02 00:30:27.122 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_info
+2024-02-02 00:30:27.123 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==> Parameters: 
+2024-02-02 00:30:27.126 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsCountByCondition - <==      Total: 1
+2024-02-02 00:30:27.127 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==>  Preparing: SELECT goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time FROM tb_newbee_mall_goods_info order by create_time desc limit ?, ?
+2024-02-02 00:30:27.128 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2024-02-02 00:30:27.140 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsListByCondition - <==      Total: 10
+2024-02-02 00:30:27.181 [http-nio-28019-exec-4] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240129_22593659.png
+2024-02-02 00:30:27.183 [http-nio-28019-exec-5] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20191124_18032027.png
+2024-02-02 00:30:27.184 [http-nio-28019-exec-6] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /admin/dist/img/no-img.png
+2024-02-02 00:30:30.320 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.updateSellStatus - ==>  Preparing: update tb_newbee_mall_goods_info set goods_sell_status = ? where goods_id in ( ? )
+2024-02-02 00:30:30.320 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.updateSellStatus - ==> Parameters: 0(Integer), 20056(Long)
+2024-02-02 00:30:30.337 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.updateSellStatus - <==    Updates: 1
+2024-02-02 00:30:30.358 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_info
+2024-02-02 00:30:30.359 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==> Parameters: 
+2024-02-02 00:30:30.361 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsCountByCondition - <==      Total: 1
+2024-02-02 00:30:30.362 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==>  Preparing: SELECT goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time FROM tb_newbee_mall_goods_info order by create_time desc limit ?, ?
+2024-02-02 00:30:30.363 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2024-02-02 00:30:30.373 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsListByCondition - <==      Total: 10
+2024-02-02 00:30:50.489 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time from tb_newbee_mall_goods_info where goods_id = ?
+2024-02-02 00:30:50.490 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==>  Preparing: SELECT * FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ? order by category_rank desc limit ?, ?
+2024-02-02 00:30:50.490 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 20056(Long)
+2024-02-02 00:30:50.491 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer), 0(Integer), 1000(Integer)
+2024-02-02 00:30:50.493 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:30:50.493 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:30:50.494 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 21(Long)
+2024-02-02 00:30:50.496 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:30:50.496 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectByLevelAndParentIds - <==      Total: 10
+2024-02-02 00:30:50.497 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:30:50.497 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ?
+2024-02-02 00:30:50.497 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 17(Long)
+2024-02-02 00:30:50.498 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer)
+2024-02-02 00:30:50.499 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:30:50.499 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:30:50.499 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:30:50.500 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 15(Long)
+2024-02-02 00:30:50.503 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:30:50.652 [http-nio-28019-exec-4] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240129_22593659.png
+2024-02-02 00:30:56.170 [http-nio-28019-exec-6] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_info
+2024-02-02 00:30:56.171 [http-nio-28019-exec-6] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==> Parameters: 
+2024-02-02 00:30:56.174 [http-nio-28019-exec-6] DEBUG c.g.m.m.G.selectGoodsCountByCondition - <==      Total: 1
+2024-02-02 00:30:56.177 [http-nio-28019-exec-6] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==>  Preparing: SELECT goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time FROM tb_newbee_mall_goods_info order by create_time desc limit ?, ?
+2024-02-02 00:30:56.179 [http-nio-28019-exec-6] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2024-02-02 00:30:56.184 [http-nio-28019-exec-6] DEBUG c.g.m.m.G.selectGoodsListByCondition - <==      Total: 10
+2024-02-02 00:30:56.227 [http-nio-28019-exec-7] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240129_22593659.png
+2024-02-02 00:30:56.228 [http-nio-28019-exec-8] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20191124_18032027.png
+2024-02-02 00:30:56.235 [http-nio-28019-exec-9] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /admin/dist/img/no-img.png
+2024-02-02 00:31:32.904 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time from tb_newbee_mall_goods_info where goods_id = ?
+2024-02-02 00:31:32.904 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==>  Preparing: SELECT * FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ? order by category_rank desc limit ?, ?
+2024-02-02 00:31:32.906 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 20056(Long)
+2024-02-02 00:31:32.907 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer), 0(Integer), 1000(Integer)
+2024-02-02 00:31:32.908 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:31:32.909 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:31:32.910 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 21(Long)
+2024-02-02 00:31:32.913 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:31:32.915 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:31:32.915 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByLevelAndParentIds - <==      Total: 10
+2024-02-02 00:31:32.916 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ?
+2024-02-02 00:31:32.916 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 17(Long)
+2024-02-02 00:31:32.917 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer)
+2024-02-02 00:31:32.918 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:31:32.918 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:31:32.918 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:31:32.920 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 15(Long)
+2024-02-02 00:31:32.921 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:31:32.968 [http-nio-28019-exec-5] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240129_22593659.png
+2024-02-02 00:38:36.627 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-02 00:38:36.635 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-02 00:39:18.196 [main] INFO  com.geekaca.mall.MallApplication - Starting MallApplication using Java 17.0.8 on DESKTOP-GTFF48C with PID 23576 (D:\java\mall\target\classes started by 74168 in D:\java\mall)
+2024-02-02 00:39:18.196 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2024-02-02 00:39:18.198 [main] INFO  com.geekaca.mall.MallApplication - The following 1 profile is active: "dev"
+2024-02-02 00:39:19.640 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 28019 (http)
+2024-02-02 00:39:19.648 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:39:19.652 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-02 00:39:19.652 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.80]
+2024-02-02 00:39:19.792 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-02 00:39:19.792 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1542 ms
+2024-02-02 00:39:20.891 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:39:20.923 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 28019 (http) with context path ''
+2024-02-02 00:39:21.315 [main] INFO  com.geekaca.mall.MallApplication - Started MallApplication in 3.56 seconds (JVM running for 4.607)
+2024-02-02 00:39:26.995 [http-nio-28019-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-02 00:39:26.995 [http-nio-28019-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-02 00:39:26.999 [http-nio-28019-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-02-02 00:39:27.085 [http-nio-28019-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-02 00:39:27.234 [http-nio-28019-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-02 00:39:27.242 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_info
+2024-02-02 00:39:27.268 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==> Parameters: 
+2024-02-02 00:39:27.300 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsCountByCondition - <==      Total: 1
+2024-02-02 00:39:27.306 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==>  Preparing: SELECT goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time FROM tb_newbee_mall_goods_info order by create_time desc limit ?, ?
+2024-02-02 00:39:27.310 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2024-02-02 00:39:27.329 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.selectGoodsListByCondition - <==      Total: 10
+2024-02-02 00:39:27.518 [http-nio-28019-exec-2] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240129_22593659.png
+2024-02-02 00:39:27.537 [http-nio-28019-exec-3] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20191124_18032027.png
+2024-02-02 00:39:27.570 [http-nio-28019-exec-4] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /admin/dist/img/no-img.png
+2024-02-02 00:39:36.521 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==>  Preparing: SELECT * FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ? order by category_rank desc limit ?, ?
+2024-02-02 00:39:36.523 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer), 0(Integer), 1000(Integer)
+2024-02-02 00:39:36.523 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time from tb_newbee_mall_goods_info where goods_id = ?
+2024-02-02 00:39:36.525 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 20056(Long)
+2024-02-02 00:39:36.531 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:39:36.532 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.selectByLevelAndParentIds - <==      Total: 10
+2024-02-02 00:39:36.533 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:39:36.533 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ?
+2024-02-02 00:39:36.534 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer)
+2024-02-02 00:39:36.534 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 21(Long)
+2024-02-02 00:39:36.536 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:39:36.536 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:39:36.537 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:39:36.538 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 17(Long)
+2024-02-02 00:39:36.540 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:39:36.541 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:39:36.543 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 15(Long)
+2024-02-02 00:39:36.545 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:39:36.619 [http-nio-28019-exec-10] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240129_22593659.png
+2024-02-02 00:39:38.794 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==>  Preparing: SELECT * FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ? order by category_rank desc limit ?, ?
+2024-02-02 00:39:38.795 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==> Parameters: 2(Integer), 16(Integer), 0(Integer), 1000(Integer)
+2024-02-02 00:39:38.799 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectByLevelAndParentIds - <==      Total: 3
+2024-02-02 00:39:38.800 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ?
+2024-02-02 00:39:38.801 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==> Parameters: 2(Integer), 16(Integer)
+2024-02-02 00:39:38.802 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:39:39.478 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==>  Preparing: SELECT * FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ? order by category_rank desc limit ?, ?
+2024-02-02 00:39:39.479 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==> Parameters: 3(Integer), 68(Integer), 0(Integer), 1000(Integer)
+2024-02-02 00:39:39.480 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectByLevelAndParentIds - <==      Total: 0
+2024-02-02 00:39:39.481 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ?
+2024-02-02 00:39:39.481 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==> Parameters: 3(Integer), 68(Integer)
+2024-02-02 00:39:39.482 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:39:40.784 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==>  Preparing: SELECT * FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ? order by category_rank desc limit ?, ?
+2024-02-02 00:39:40.785 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==> Parameters: 3(Integer), 69(Integer), 0(Integer), 1000(Integer)
+2024-02-02 00:39:40.786 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.selectByLevelAndParentIds - <==      Total: 0
+2024-02-02 00:39:40.787 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ?
+2024-02-02 00:39:40.788 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==> Parameters: 3(Integer), 69(Integer)
+2024-02-02 00:39:40.789 [http-nio-28019-exec-4] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:39:41.599 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==>  Preparing: SELECT * FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ? order by category_rank desc limit ?, ?
+2024-02-02 00:39:41.601 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==> Parameters: 3(Integer), 67(Integer), 0(Integer), 1000(Integer)
+2024-02-02 00:39:41.602 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.selectByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:39:41.602 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ?
+2024-02-02 00:39:41.604 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==> Parameters: 3(Integer), 67(Integer)
+2024-02-02 00:39:41.606 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:39:51.403 [http-nio-28019-exec-6] DEBUG c.g.m.m.G.updateByPrimaryKey - ==>  Preparing: update tb_newbee_mall_goods_info set goods_name = ?, goods_intro = ?, goods_category_id = ?, goods_cover_img = ?, goods_carousel = ?, goods_detail_content = ?, original_price = ?, selling_price = ?, stock_num = ?, tag = ?, goods_sell_status = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where goods_id = ?
+2024-02-02 00:39:51.406 [http-nio-28019-exec-6] DEBUG c.g.m.m.G.updateByPrimaryKey - ==> Parameters: 刷刷刷111(String), 刷刷刷1111(String), 76(Long), http://localhost:28019/upload/20240129_22593659.png(String), null, <p>111</p>(String), 20(Integer), 50(Integer), 1111(Integer), 1111(String), 0(Integer), null, null, null, null, 20056(Long)
+2024-02-02 00:39:51.467 [http-nio-28019-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null
+### The error may exist in com/geekaca/mall/mapper/GoodsInfoMapper.xml
+### The error may involve com.geekaca.mall.mapper.GoodsInfoMapper.updateByPrimaryKey-Inline
+### The error occurred while setting parameters
+### SQL: update tb_newbee_mall_goods_info         set goods_name           = ?,             goods_intro          = ?,             goods_category_id    = ?,             goods_cover_img      = ?,             goods_carousel       = ?,             goods_detail_content = ?,             original_price       = ?,             selling_price        = ?,             stock_num            = ?,             tag                  = ?,             goods_sell_status    = ?,             create_user          = ?,             create_time          = ?,             update_user          = ?,             update_time          = ?         where goods_id = ?
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null
+; Column 'goods_carousel' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:555)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:339)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at jdk.internal.reflect.GeneratedMethodAccessor39.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy118.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy75.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:288)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy89.updateByPrimaryKey(Unknown Source)
+	at com.geekaca.mall.service.Impl.GoodsServiceImpl.updateGoodsInfo(GoodsServiceImpl.java:73)
+	at com.geekaca.mall.controller.admin.GoodsController.update(GoodsController.java:122)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-02-02 00:40:44.150 [http-nio-28019-exec-9] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240202_00404419.png
+2024-02-02 00:40:48.692 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.updateByPrimaryKey - ==>  Preparing: update tb_newbee_mall_goods_info set goods_name = ?, goods_intro = ?, goods_category_id = ?, goods_cover_img = ?, goods_carousel = ?, goods_detail_content = ?, original_price = ?, selling_price = ?, stock_num = ?, tag = ?, goods_sell_status = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where goods_id = ?
+2024-02-02 00:40:48.693 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.updateByPrimaryKey - ==> Parameters: 刷刷刷111(String), 刷刷刷1111(String), 76(Long), http://localhost:28019/upload/20240202_00404419.png(String), null, <p>111</p>(String), 20(Integer), 50(Integer), 1111(Integer), 1111(String), 0(Integer), null, null, null, null, 20056(Long)
+2024-02-02 00:40:48.698 [http-nio-28019-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null
+### The error may exist in com/geekaca/mall/mapper/GoodsInfoMapper.xml
+### The error may involve com.geekaca.mall.mapper.GoodsInfoMapper.updateByPrimaryKey-Inline
+### The error occurred while setting parameters
+### SQL: update tb_newbee_mall_goods_info         set goods_name           = ?,             goods_intro          = ?,             goods_category_id    = ?,             goods_cover_img      = ?,             goods_carousel       = ?,             goods_detail_content = ?,             original_price       = ?,             selling_price        = ?,             stock_num            = ?,             tag                  = ?,             goods_sell_status    = ?,             create_user          = ?,             create_time          = ?,             update_user          = ?,             update_time          = ?         where goods_id = ?
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null
+; Column 'goods_carousel' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:555)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:339)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at jdk.internal.reflect.GeneratedMethodAccessor39.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy118.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy75.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:288)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy89.updateByPrimaryKey(Unknown Source)
+	at com.geekaca.mall.service.Impl.GoodsServiceImpl.updateGoodsInfo(GoodsServiceImpl.java:73)
+	at com.geekaca.mall.controller.admin.GoodsController.update(GoodsController.java:122)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-02-02 00:40:53.388 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.updateByPrimaryKey - ==>  Preparing: update tb_newbee_mall_goods_info set goods_name = ?, goods_intro = ?, goods_category_id = ?, goods_cover_img = ?, goods_carousel = ?, goods_detail_content = ?, original_price = ?, selling_price = ?, stock_num = ?, tag = ?, goods_sell_status = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where goods_id = ?
+2024-02-02 00:40:53.390 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.updateByPrimaryKey - ==> Parameters: 刷刷刷111(String), 刷刷刷1111(String), 76(Long), http://localhost:28019/upload/20240202_00404419.png(String), null, <p>11111111111111</p>(String), 20(Integer), 50(Integer), 1111(Integer), 1111(String), 0(Integer), null, null, null, null, 20056(Long)
+2024-02-02 00:40:53.392 [http-nio-28019-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null
+### The error may exist in com/geekaca/mall/mapper/GoodsInfoMapper.xml
+### The error may involve com.geekaca.mall.mapper.GoodsInfoMapper.updateByPrimaryKey-Inline
+### The error occurred while setting parameters
+### SQL: update tb_newbee_mall_goods_info         set goods_name           = ?,             goods_intro          = ?,             goods_category_id    = ?,             goods_cover_img      = ?,             goods_carousel       = ?,             goods_detail_content = ?,             original_price       = ?,             selling_price        = ?,             stock_num            = ?,             tag                  = ?,             goods_sell_status    = ?,             create_user          = ?,             create_time          = ?,             update_user          = ?,             update_time          = ?         where goods_id = ?
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null
+; Column 'goods_carousel' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Column 'goods_carousel' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:555)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:339)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at jdk.internal.reflect.GeneratedMethodAccessor39.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy118.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy75.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:288)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy89.updateByPrimaryKey(Unknown Source)
+	at com.geekaca.mall.service.Impl.GoodsServiceImpl.updateGoodsInfo(GoodsServiceImpl.java:73)
+	at com.geekaca.mall.controller.admin.GoodsController.update(GoodsController.java:122)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-02-02 00:43:51.002 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-02 00:43:51.012 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-02 00:43:57.695 [main] INFO  com.geekaca.mall.MallApplication - Starting MallApplication using Java 17.0.8 on DESKTOP-GTFF48C with PID 15444 (D:\java\mall\target\classes started by 74168 in D:\java\mall)
+2024-02-02 00:43:57.694 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2024-02-02 00:43:57.698 [main] INFO  com.geekaca.mall.MallApplication - The following 1 profile is active: "dev"
+2024-02-02 00:43:59.222 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 28019 (http)
+2024-02-02 00:43:59.230 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:43:59.231 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-02 00:43:59.231 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.80]
+2024-02-02 00:43:59.359 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-02 00:43:59.359 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1592 ms
+2024-02-02 00:44:00.488 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:44:00.512 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 28019 (http) with context path ''
+2024-02-02 00:44:00.938 [main] INFO  com.geekaca.mall.MallApplication - Started MallApplication in 3.708 seconds (JVM running for 4.802)
+2024-02-02 00:44:04.010 [http-nio-28019-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-02 00:44:04.010 [http-nio-28019-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-02 00:44:04.011 [http-nio-28019-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-02-02 00:44:04.094 [http-nio-28019-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-02 00:44:04.305 [http-nio-28019-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-02 00:44:04.314 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_info
+2024-02-02 00:44:04.347 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==> Parameters: 
+2024-02-02 00:44:04.392 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsCountByCondition - <==      Total: 1
+2024-02-02 00:44:04.403 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==>  Preparing: SELECT goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time FROM tb_newbee_mall_goods_info order by create_time desc limit ?, ?
+2024-02-02 00:44:04.407 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2024-02-02 00:44:04.428 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsListByCondition - <==      Total: 10
+2024-02-02 00:44:04.541 [http-nio-28019-exec-2] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20191124_18032027.png
+2024-02-02 00:44:04.541 [http-nio-28019-exec-1] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240129_22593659.png
+2024-02-02 00:44:04.542 [http-nio-28019-exec-4] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /admin/dist/img/no-img.png
+2024-02-02 00:44:06.543 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time from tb_newbee_mall_goods_info where goods_id = ?
+2024-02-02 00:44:06.544 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==>  Preparing: SELECT * FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ? order by category_rank desc limit ?, ?
+2024-02-02 00:44:06.545 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 10902(Long)
+2024-02-02 00:44:06.546 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer), 0(Integer), 1000(Integer)
+2024-02-02 00:44:06.548 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:44:06.549 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:44:06.551 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 46(Long)
+2024-02-02 00:44:06.553 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:44:06.553 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:44:06.554 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 19(Long)
+2024-02-02 00:44:06.555 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.selectByLevelAndParentIds - <==      Total: 10
+2024-02-02 00:44:06.555 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ?
+2024-02-02 00:44:06.556 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:44:06.556 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer)
+2024-02-02 00:44:06.556 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:44:06.557 [http-nio-28019-exec-8] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:44:06.557 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 15(Long)
+2024-02-02 00:44:06.558 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:44:17.344 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.updateByPrimaryKey - ==>  Preparing: update tb_newbee_mall_goods_info set goods_name = ?, goods_intro = ?, goods_category_id = ?, goods_cover_img = ?, goods_carousel = ?, goods_detail_content = ?, original_price = ?, selling_price = ?, stock_num = ?, tag = ?, goods_sell_status = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where goods_id = ?
+2024-02-02 00:44:17.346 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.updateByPrimaryKey - ==> Parameters: 华为 HUAWEI P40 冰霜银 全网通5G手机(String), 麒麟990 5G SoC芯片 5000万超感知徕卡三摄 30倍数字变焦 6GB+128GB(String), 46(Long), https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-silver.png(String), https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-silver.png(String), <img src="https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-detail.jpg" alt=""/>(String), 1111(Integer), 4299(Integer), 100(Integer), 超感知影像111(String), 0(Integer), null, null, null, null, 10902(Long)
+2024-02-02 00:44:17.415 [http-nio-28019-exec-10] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null
+### The error may exist in com/geekaca/mall/mapper/GoodsInfoMapper.xml
+### The error may involve com.geekaca.mall.mapper.GoodsInfoMapper.updateByPrimaryKey-Inline
+### The error occurred while setting parameters
+### SQL: update tb_newbee_mall_goods_info         set goods_name           = ?,             goods_intro          = ?,             goods_category_id    = ?,             goods_cover_img      = ?,             goods_carousel       = ?,             goods_detail_content = ?,             original_price       = ?,             selling_price        = ?,             stock_num            = ?,             tag                  = ?,             goods_sell_status    = ?,             create_user          = ?,             create_time          = ?,             update_user          = ?,             update_time          = ?         where goods_id = ?
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null
+; Column 'create_user' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:555)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:339)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy118.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy75.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:288)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy89.updateByPrimaryKey(Unknown Source)
+	at com.geekaca.mall.service.Impl.GoodsServiceImpl.updateGoodsInfo(GoodsServiceImpl.java:73)
+	at com.geekaca.mall.controller.admin.GoodsController.update(GoodsController.java:123)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-02-02 00:47:13.831 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-02 00:47:13.844 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-02 00:47:21.440 [main] INFO  com.geekaca.mall.MallApplication - Starting MallApplication using Java 17.0.8 on DESKTOP-GTFF48C with PID 23596 (D:\java\mall\target\classes started by 74168 in D:\java\mall)
+2024-02-02 00:47:21.440 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2024-02-02 00:47:21.442 [main] INFO  com.geekaca.mall.MallApplication - The following 1 profile is active: "dev"
+2024-02-02 00:47:23.097 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 28019 (http)
+2024-02-02 00:47:23.107 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:47:23.109 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-02 00:47:23.110 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.80]
+2024-02-02 00:47:23.289 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-02 00:47:23.289 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1794 ms
+2024-02-02 00:47:24.499 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:47:24.524 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 28019 (http) with context path ''
+2024-02-02 00:47:24.896 [main] INFO  com.geekaca.mall.MallApplication - Started MallApplication in 4.159 seconds (JVM running for 5.311)
+2024-02-02 00:47:36.101 [http-nio-28019-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-02 00:47:36.102 [http-nio-28019-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-02 00:47:36.103 [http-nio-28019-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-02-02 00:47:36.415 [http-nio-28019-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-02 00:47:36.618 [http-nio-28019-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-02 00:47:36.630 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_info
+2024-02-02 00:47:36.667 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==> Parameters: 
+2024-02-02 00:47:36.703 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsCountByCondition - <==      Total: 1
+2024-02-02 00:47:36.712 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==>  Preparing: SELECT goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time FROM tb_newbee_mall_goods_info order by create_time desc limit ?, ?
+2024-02-02 00:47:36.716 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2024-02-02 00:47:36.735 [http-nio-28019-exec-3] DEBUG c.g.m.m.G.selectGoodsListByCondition - <==      Total: 10
+2024-02-02 00:47:36.822 [http-nio-28019-exec-2] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240129_22593659.png
+2024-02-02 00:47:36.822 [http-nio-28019-exec-4] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20191124_18032027.png
+2024-02-02 00:47:36.832 [http-nio-28019-exec-5] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /admin/dist/img/no-img.png
+2024-02-02 00:47:41.219 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time from tb_newbee_mall_goods_info where goods_id = ?
+2024-02-02 00:47:41.219 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==>  Preparing: SELECT * FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ? order by category_rank desc limit ?, ?
+2024-02-02 00:47:41.221 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 10902(Long)
+2024-02-02 00:47:41.221 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer), 0(Integer), 1000(Integer)
+2024-02-02 00:47:41.225 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:47:41.226 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:47:41.227 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 46(Long)
+2024-02-02 00:47:41.229 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.selectByLevelAndParentIds - <==      Total: 10
+2024-02-02 00:47:41.229 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:47:41.230 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ?
+2024-02-02 00:47:41.230 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:47:41.230 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer)
+2024-02-02 00:47:41.231 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 19(Long)
+2024-02-02 00:47:41.231 [http-nio-28019-exec-9] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:47:41.233 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:47:41.233 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - ==>  Preparing: select category_id,category_level,parent_id, category_name,category_rank,is_deleted, create_time,create_user,update_time, update_user from tb_newbee_mall_goods_category where category_id = ?
+2024-02-02 00:47:41.234 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - ==> Parameters: 15(Long)
+2024-02-02 00:47:41.236 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectByPrimaryKey - <==      Total: 1
+2024-02-02 00:47:46.518 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.updateByPrimaryKey - ==>  Preparing: update tb_newbee_mall_goods_info set goods_name = ?, goods_intro = ?, goods_category_id = ?, goods_cover_img = ?, goods_carousel = ?, goods_detail_content = ?, original_price = ?, selling_price = ?, stock_num = ?, tag = ?, goods_sell_status = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where goods_id = ?
+2024-02-02 00:47:46.520 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.updateByPrimaryKey - ==> Parameters: 华为 HUAWEI P40 冰霜银 全网通5G手机(String), 麒麟990 5G SoC芯片 5000万超感知徕卡三摄 30倍数字变焦 6GB+128GB(String), 46(Long), https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-silver.png(String), https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-silver.png(String), <img src="https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-detail.jpg" alt=""/>(String), 1111(Integer), 4299(Integer), 1111(Integer), 超感知影像(String), 0(Integer), null, null, 1(Integer), null, 10902(Long)
+2024-02-02 00:47:46.569 [http-nio-28019-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null
+### The error may exist in com/geekaca/mall/mapper/GoodsInfoMapper.xml
+### The error may involve com.geekaca.mall.mapper.GoodsInfoMapper.updateByPrimaryKey-Inline
+### The error occurred while setting parameters
+### SQL: update tb_newbee_mall_goods_info         set goods_name           = ?,             goods_intro          = ?,             goods_category_id    = ?,             goods_cover_img      = ?,             goods_carousel       = ?,             goods_detail_content = ?,             original_price       = ?,             selling_price        = ?,             stock_num            = ?,             tag                  = ?,             goods_sell_status    = ?,             create_user          = ?,             create_time          = ?,             update_user          = ?,             update_time          = ?         where goods_id = ?
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null
+; Column 'create_user' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:555)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:339)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy119.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy75.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:288)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy89.updateByPrimaryKey(Unknown Source)
+	at com.geekaca.mall.service.Impl.GoodsServiceImpl.updateGoodsInfo(GoodsServiceImpl.java:73)
+	at com.geekaca.mall.controller.admin.GoodsController.update(GoodsController.java:137)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-02-02 00:48:36.428 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-02 00:48:36.435 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-02-02 00:48:43.577 [main] INFO  com.geekaca.mall.MallApplication - Starting MallApplication using Java 17.0.8 on DESKTOP-GTFF48C with PID 26616 (D:\java\mall\target\classes started by 74168 in D:\java\mall)
+2024-02-02 00:48:43.577 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+2024-02-02 00:48:43.580 [main] INFO  com.geekaca.mall.MallApplication - The following 1 profile is active: "dev"
+2024-02-02 00:48:45.019 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 28019 (http)
+2024-02-02 00:48:45.027 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:48:45.028 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-02-02 00:48:45.028 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.80]
+2024-02-02 00:48:45.166 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-02-02 00:48:45.167 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1533 ms
+2024-02-02 00:48:46.279 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-28019"]
+2024-02-02 00:48:46.302 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 28019 (http) with context path ''
+2024-02-02 00:48:46.672 [main] INFO  com.geekaca.mall.MallApplication - Started MallApplication in 3.52 seconds (JVM running for 4.657)
+2024-02-02 00:48:51.614 [http-nio-28019-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-02 00:48:51.614 [http-nio-28019-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-02-02 00:48:51.615 [http-nio-28019-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-02-02 00:48:51.799 [http-nio-28019-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-02-02 00:48:51.966 [http-nio-28019-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-02-02 00:48:51.974 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.updateByPrimaryKey - ==>  Preparing: update tb_newbee_mall_goods_info set goods_name = ?, goods_intro = ?, goods_category_id = ?, goods_cover_img = ?, goods_carousel = ?, goods_detail_content = ?, original_price = ?, selling_price = ?, stock_num = ?, tag = ?, goods_sell_status = ?, create_user = ?, create_time = ?, update_user = ?, update_time = ? where goods_id = ?
+2024-02-02 00:48:52.000 [http-nio-28019-exec-1] DEBUG c.g.m.m.G.updateByPrimaryKey - ==> Parameters: 华为 HUAWEI P40 冰霜银 全网通5G手机(String), 麒麟990 5G SoC芯片 5000万超感知徕卡三摄 30倍数字变焦 6GB+128GB(String), 46(Long), https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-silver.png(String), https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-silver.png(String), <img src="https://newbee-mall.oss-cn-beijing.aliyuncs.com/images/p40-detail.jpg" alt=""/>(String), 1111(Integer), 4299(Integer), 1111(Integer), 超感知影像(String), 0(Integer), null, null, 1(Integer), null, 10902(Long)
+2024-02-02 00:48:52.054 [http-nio-28019-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null
+### The error may exist in com/geekaca/mall/mapper/GoodsInfoMapper.xml
+### The error may involve com.geekaca.mall.mapper.GoodsInfoMapper.updateByPrimaryKey-Inline
+### The error occurred while setting parameters
+### SQL: update tb_newbee_mall_goods_info         set goods_name           = ?,             goods_intro          = ?,             goods_category_id    = ?,             goods_cover_img      = ?,             goods_carousel       = ?,             goods_detail_content = ?,             original_price       = ?,             selling_price        = ?,             stock_num            = ?,             tag                  = ?,             goods_sell_status    = ?,             create_user          = ?,             create_time          = ?,             update_user          = ?,             update_time          = ?         where goods_id = ?
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null
+; Column 'create_user' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Column 'create_user' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.serverExecute(ServerPreparedStatement.java:555)
+	at com.mysql.cj.jdbc.ServerPreparedStatement.executeInternal(ServerPreparedStatement.java:339)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:354)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at jdk.proxy3/jdk.proxy3.$Proxy119.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	at jdk.proxy2/jdk.proxy2.$Proxy75.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:288)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:67)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy89.updateByPrimaryKey(Unknown Source)
+	at com.geekaca.mall.service.Impl.GoodsServiceImpl.updateGoodsInfo(GoodsServiceImpl.java:73)
+	at com.geekaca.mall.controller.admin.GoodsController.update(GoodsController.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:558)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1790)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2024-02-02 00:49:09.625 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==>  Preparing: SELECT * FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ? order by category_rank desc limit ?, ?
+2024-02-02 00:49:09.626 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer), 0(Integer), 1000(Integer)
+2024-02-02 00:49:09.655 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.selectByLevelAndParentIds - <==      Total: 10
+2024-02-02 00:49:09.656 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ?
+2024-02-02 00:49:09.657 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer)
+2024-02-02 00:49:09.659 [http-nio-28019-exec-2] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:50:09.378 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==>  Preparing: SELECT * FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ? order by category_rank desc limit ?, ?
+2024-02-02 00:50:09.380 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.selectByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer), 0(Integer), 1000(Integer)
+2024-02-02 00:50:09.393 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.selectByLevelAndParentIds - <==      Total: 10
+2024-02-02 00:50:09.394 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_category where category_level = ? and parent_id = ?
+2024-02-02 00:50:09.396 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - ==> Parameters: 1(Integer), 0(Integer)
+2024-02-02 00:50:09.397 [http-nio-28019-exec-5] DEBUG c.g.m.m.G.getCountByLevelAndParentIds - <==      Total: 1
+2024-02-02 00:51:42.673 [http-nio-28019-exec-9] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /manage-api/v1/indexConfigs
+2024-02-02 00:51:47.572 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==>  Preparing: SELECT count(*) FROM tb_newbee_mall_goods_info
+2024-02-02 00:51:47.573 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsCountByCondition - ==> Parameters: 
+2024-02-02 00:51:47.576 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsCountByCondition - <==      Total: 1
+2024-02-02 00:51:47.577 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==>  Preparing: SELECT goods_id ,goods_name,goods_intro, goods_category_id,goods_cover_img,goods_carousel, goods_detail_content,selling_price, tag,goods_sell_status, create_user,create_time,update_user, update_time FROM tb_newbee_mall_goods_info order by create_time desc limit ?, ?
+2024-02-02 00:51:47.578 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsListByCondition - ==> Parameters: 0(Integer), 10(Integer)
+2024-02-02 00:51:47.588 [http-nio-28019-exec-10] DEBUG c.g.m.m.G.selectGoodsListByCondition - <==      Total: 10
+2024-02-02 00:51:47.651 [http-nio-28019-exec-1] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20240129_22593659.png
+2024-02-02 00:51:47.652 [http-nio-28019-exec-2] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /upload/20191124_18032027.png
+2024-02-02 00:51:47.655 [http-nio-28019-exec-3] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /admin/dist/img/no-img.png
+2024-02-02 00:54:11.621 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-02-02 00:54:11.630 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
