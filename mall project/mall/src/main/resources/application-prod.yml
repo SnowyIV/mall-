@@ -4,13 +4,14 @@ server:
   port: 80
 
 spring:
+  #  yml中增加配置，解决swagger报错
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
   datasource:
     # 数据连接池类型
     type: com.zaxxer.hikari.HikariDataSource
-    # driver-class-name: com.mysql.cj.jdbc.Driver
+    # driver-class-name: com.mysql.jdbc.Driver
     # mysql-connector-java 8.0+ 使用这个新的接口
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://host.docker.internal:3306/mall_db_v2?useSSL=false&useServerPrepStmts=true&characterEncoding=utf8

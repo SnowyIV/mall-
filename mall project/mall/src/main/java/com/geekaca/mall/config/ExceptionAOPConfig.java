@@ -1,6 +1,7 @@
 package com.geekaca.mall.config;
 
 import com.geekaca.mall.constants.MallConstants;
+import com.geekaca.mall.exceptions.ItemNotOwnedException;
 import com.geekaca.mall.exceptions.LoginNameExsistsException;
 import com.geekaca.mall.exceptions.MallException;
 import com.geekaca.mall.exceptions.UserNotLoginException;
@@ -20,7 +21,6 @@ public class ExceptionAOPConfig {
      * 配置 拦截哪种异常
      * @param exception
      * @return 拦截到指定种类的异常后，对应的controller接口返回结构
-     * local...
      */
     @ExceptionHandler(value = LoginNameExsistsException.class)
     public Result handleUserEx(LoginNameExsistsException exception){
@@ -28,10 +28,18 @@ public class ExceptionAOPConfig {
         return ResultGenerator.genFailResult(exception.getMessage());
     }
     @ExceptionHandler(value = UserNotLoginException.class)
-    public Result handleUserNotLoginx(UserNotLoginException exception){
+    public Result handleUserNotLogin(UserNotLoginException exception){
         log.error(" 用户未登录", exception.getMessage());
         Result rsf = new Result();
         rsf.setResultCode(MallConstants.CODE_USER_NOT_LOGIN);
+        rsf.setMessage(exception.getMessage());
+        return rsf;
+    }
+    @ExceptionHandler(value = ItemNotOwnedException.class)
+    public Result handleItemNotOwned(ItemNotOwnedException exception){
+        log.error(" 该商品不是您的，无权删除", exception.getMessage());
+        Result rsf = new Result();
+        rsf.setResultCode(MallConstants.CODE_NOT_USER_CART_ITEM);
         rsf.setMessage(exception.getMessage());
         return rsf;
     }
@@ -41,6 +49,7 @@ public class ExceptionAOPConfig {
         log.error(" 业务异常", exception.getMessage());
         return ResultGenerator.genFailResult(exception.getMessage());
     }
+
     /**
      * 参数格式不符合要求，会触发MethodArgumentNotValidException 异常
      * 参数不匹配异常
@@ -55,4 +64,3 @@ public class ExceptionAOPConfig {
         //getDefaultMessage()会返回message信息
     }
 }
-

@@ -8,5 +8,5 @@ public class RecommendGoodsesVO {
     private Long goodsId;
     private Double sellingPrice;
     private String goodsCoverImg;
-    private String configName;
+    private String goodsName;
 }

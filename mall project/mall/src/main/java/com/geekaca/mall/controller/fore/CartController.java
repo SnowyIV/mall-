@@ -1,6 +1,5 @@
 package com.geekaca.mall.controller.fore;
 
-
 import com.auth0.jwt.interfaces.Claim;
 import com.geekaca.mall.constants.MallConstants;
 import com.geekaca.mall.controller.vo.GoodsDTO;
@@ -18,10 +17,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 import static com.geekaca.mall.constants.MallConstants.CODE_USER_NOT_LOGIN;
 

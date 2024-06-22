@@ -1,10 +1,21 @@
 package com.geekaca.mall.service;
 
+import com.geekaca.mall.controller.param.PageParam;
 import com.geekaca.mall.controller.param.UserParam;
 import com.geekaca.mall.domain.User;
+import com.geekaca.mall.utils.PageResult;
+
 
 public interface UserService {
-   boolean register(String username,String password);
+    User login(UserParam userParam);
 
-   User login(UserParam userParam);
+    int userRegister(String loginName, String password);
+
+    User getUserById(long uidLong);
+
+    int updateUserInfo(User userUpdateInfo);
+
+    PageResult selectAllMember(PageParam pageParam);
+
+    int updateUserLock(Long[] ids, int lockedFlag);
 }

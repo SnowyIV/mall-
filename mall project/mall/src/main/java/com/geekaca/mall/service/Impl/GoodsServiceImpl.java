@@ -1,7 +1,6 @@
-package com.geekaca.mall.service.Impl;
+package com.geekaca.mall.service.impl;
 
 import com.geekaca.mall.controller.param.GoodsParam;
-import com.geekaca.mall.controller.param.SellStatusIdParam;
 import com.geekaca.mall.domain.GoodsInfo;
 import com.geekaca.mall.mapper.GoodsInfoMapper;
 import com.geekaca.mall.service.GoodsService;
@@ -52,25 +51,19 @@ public class GoodsServiceImpl implements GoodsService {
         return goodsInfoMapper.insertSelective(goodsInfo);
     }
 
-//    @Override
-//    public int deleteGoods(Long id) {
-//        return goodsInfoMapper.deleteByPrimaryKey(id);
-//    }
-
-
     @Override
     public int updateSellStatus(Long[] ids, int sellStatus) {
-      return   goodsInfoMapper.updateSellStatus(ids, sellStatus);
-    }
-
-    @Override
-    public GoodsInfo getGoodsById(Long id) {
-        return goodsInfoMapper.selectByPrimaryKey(id);
+        return goodsInfoMapper.updateSellStatus(ids, sellStatus);
     }
 
     @Override
     public int updateGoodsInfo(GoodsInfo goodsEditInfo) {
         return goodsInfoMapper.updateByPrimaryKey(goodsEditInfo);
+    }
+
+    @Override
+    public GoodsInfo getGoodsById(Long id) {
+        return goodsInfoMapper.selectGoodsForBackEnd(id);
     }
 }
 

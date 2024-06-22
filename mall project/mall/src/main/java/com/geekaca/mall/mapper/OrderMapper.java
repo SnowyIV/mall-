@@ -38,4 +38,18 @@ public interface OrderMapper {
     List<OrderAndItemDTO> selectByStatus(UserOrderParam userOrderParam);
 
     int selectCountByStatus(UserOrderParam userOrderParam);
+
+    int updateDoneByIds(Long[] ids);
+
+    int updateCheckOutByIds(Long[] ids);
+
+    int updateClosedByIds(Long[] ids);
+
+    OrderAndItemDTO selectDetailByOrderId(Long orderId);
+
+    OrderAndItemDTO selectDetailByOrderNo(String orderNo);
+
+    int updateCancelByOrderNo(String orderNo);
+
+    int updateFinishByOrderNo(String orderNo);
 }

@@ -1,7 +1,6 @@
 package com.geekaca.mall.service;
 
 import com.geekaca.mall.controller.param.GoodsParam;
-import com.geekaca.mall.controller.param.SellStatusIdParam;
 import com.geekaca.mall.domain.GoodsInfo;
 import com.geekaca.mall.utils.PageResult;
 
@@ -18,10 +17,8 @@ public interface GoodsService {
 
     int updateSellStatus(Long[] ids, int sellStatus);
 
-    GoodsInfo getGoodsById(Long id);
-
     int updateGoodsInfo(GoodsInfo goodsEditInfo);
 
-    // int deleteGoods(Long id);
+    GoodsInfo getGoodsById(Long id);
 }
 

@@ -1,7 +1,8 @@
-package com.geekaca.mall.service.Impl;
+package com.geekaca.mall.service.impl;
 
 import com.geekaca.mall.controller.param.CategoryParam;
 import com.geekaca.mall.domain.GoodsCategory;
+import com.geekaca.mall.exceptions.MallException;
 import com.geekaca.mall.mapper.GoodsCategoryMapper;
 import com.geekaca.mall.service.CategoryService;
 import com.geekaca.mall.utils.PageResult;
@@ -34,6 +35,33 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public GoodsCategory getGoodsCategoryById(Long goodsCategoryId) {
-     return  categoryMapper.selectByPrimaryKey(goodsCategoryId);
+        return categoryMapper.selectByPrimaryKey(goodsCategoryId);
+    }
+
+    @Override
+    public GoodsCategory getCategory(Long id) {
+        return categoryMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateCategory(GoodsCategory goodsCategory) {
+        return categoryMapper.updateById(goodsCategory);
+    }
+
+    @Override
+    public int addCategory(GoodsCategory goodsCategory) {
+        return categoryMapper.insertSelective(goodsCategory);
+    }
+
+    @Override
+    public int deleteByIds(Long[] ids) {
+        for (Long id : ids) {
+            int selected = categoryMapper.selectByParentId(id);
+            if (selected > 0) {
+                GoodsCategory goodsCategory = categoryMapper.selectByPrimaryKey(id);
+                throw new MallException(goodsCategory.getCategoryName() + "的分类下还有子类，无法删除");
+            }
+        }
+        return categoryMapper.deleteByIds(ids);
     }
 }

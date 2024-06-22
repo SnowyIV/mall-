@@ -1,7 +1,6 @@
 package com.geekaca.mall.mapper;
 
 import com.geekaca.mall.controller.param.GoodsParam;
-import com.geekaca.mall.controller.param.SellStatusIdParam;
 import com.geekaca.mall.domain.GoodsInfo;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -34,4 +33,5 @@ public interface GoodsInfoMapper {
 
     int updateSellStatus(Long[] ids, int sellStatus);
 
+    GoodsInfo selectGoodsForBackEnd(Long id);
 }

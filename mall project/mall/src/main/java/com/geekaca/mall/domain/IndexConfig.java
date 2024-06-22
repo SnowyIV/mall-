@@ -2,10 +2,12 @@ package com.geekaca.mall.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 /**
- * 
+ * 配置表，保存针对首页配置信息
  * @TableName tb_newbee_mall_index_config
  */
 @Data
@@ -14,11 +16,7 @@ public class IndexConfig implements Serializable {
      * 首页配置项主键id
      */
     private Long configId;
-
-    /**
-     * 显示字符(配置搜索时不可为空，其他可为空)
-     */
-    private String goodsName;
+    private String configName;
 
     /**
      * 1-搜索框热搜 2-搜索下拉框热搜 3-(首页)热销商品 4-(首页)新品上线 5-(首页)为你推荐
@@ -48,6 +46,7 @@ public class IndexConfig implements Serializable {
     /**
      * 创建时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
 
     /**
@@ -66,9 +65,10 @@ public class IndexConfig implements Serializable {
     private Integer updateUser;
 
     private String goodsCoverImg;
-    private Integer sellingPrice;
+
+    private Double sellingPrice;
+
+    private String goodsName;
     private static final long serialVersionUID = 1L;
-
-
 
 }

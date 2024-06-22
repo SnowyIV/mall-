@@ -6,9 +6,9 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 /**
-* @author 74168
+* @author 33
 * @description 针对表【tb_newbee_mall_user_address(收货地址表)】的数据库操作Mapper
-* @createDate 2024-01-10 21:00:52
+* @createDate 2024-01-10 12:27:16
 * @Entity com.geekaca.mall.domain.UserAddress
 */
 @Mapper
@@ -26,7 +26,9 @@ public interface UserAddressMapper {
 
     int updateByPrimaryKey(UserAddress record);
 
+     UserAddress selectByUserId(Long userId);
+
     List<UserAddress> selectAddressListByUserId(Integer userId);
 
-    UserAddress selectDefaultAddressByUserId(Integer uid);
+    int updateDefaultAddress(Integer uid);
 }

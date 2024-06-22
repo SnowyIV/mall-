@@ -15,10 +15,15 @@ public class MallWebConfig extends WebMvcConfigurationSupport {
                 .allowedMethods("GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowCredentials(true).maxAge(3600);
     }
-//配置静态资源的访问
+
+    /**
+     * 配置静态资源的访问
+     * @param registry
+     */
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         //当用户访问 http://localhost:28019/goods-img/**  资源  会被指向  后面的目录
         registry.addResourceHandler("/goods-img/**").addResourceLocations("file:" + MallConstants.FILE_UPLOAD_DIC);
+        registry.addResourceHandler("/upload/**").addResourceLocations("file:" + MallConstants.FILE_UPLOAD_DIC);
     }
 }

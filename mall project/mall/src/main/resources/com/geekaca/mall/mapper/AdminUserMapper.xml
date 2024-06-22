@@ -24,7 +24,6 @@
         where  admin_user_id = #{adminUserId,jdbcType=BIGINT} 
     </select>
 
-
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         delete from tb_newbee_mall_admin_user
         where  admin_user_id = #{adminUserId,jdbcType=BIGINT} 
@@ -80,9 +79,8 @@
             locked =  #{locked,jdbcType=TINYINT}
         where   admin_user_id = #{adminUserId,jdbcType=BIGINT} 
     </update>
-
     <select id="checkLogin" resultMap="BaseResultMap">
-        SELECT * FROM tb_newbee_mall_admin_user
-        WHERE login_user_name = #{userName,jdbcType=VARCHAR} AND login_password = #{passwordMd5,jdbcType=VARCHAR}
-    </select>
+SELECT * FROM tb_newbee_mall_admin_user
+ WHERE login_user_name = #{userName,jdbcType=VARCHAR} AND login_password = #{passwordMd5,jdbcType=VARCHAR}
+ </select>
 </mapper>

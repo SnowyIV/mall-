@@ -1,4 +1,4 @@
-package com.geekaca.mall.service.Impl;
+package com.geekaca.mall.service.impl;
 
 import com.geekaca.mall.controller.param.AdminLoginParam;
 import com.geekaca.mall.domain.AdminUser;

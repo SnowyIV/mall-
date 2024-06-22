@@ -9,4 +9,12 @@ public interface CategoryService {
     PageResult selectByLevelAndParentIds(CategoryParam categoryParam);
 
     GoodsCategory getGoodsCategoryById(Long goodsCategoryId);
+
+    GoodsCategory getCategory(Long id);
+
+    int updateCategory(GoodsCategory goodsCategory);
+
+    int addCategory(GoodsCategory goodsCategory);
+
+    int deleteByIds(Long[] ids);
 }

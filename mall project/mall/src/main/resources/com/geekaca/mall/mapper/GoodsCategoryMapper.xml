@@ -121,7 +121,6 @@
             update_user =  #{updateUser,jdbcType=INTEGER}
         where   category_id = #{categoryId,jdbcType=BIGINT} 
     </update>
-
     <select id="selectByLevelAndParentIds" resultMap="BaseResultMap">
  SELECT * FROM tb_newbee_mall_goods_category
  where category_level = #{categoryLevel} and parent_id = #{parentId}
@@ -131,4 +130,19 @@
  SELECT count(*) FROM tb_newbee_mall_goods_category
  where category_level = #{categoryLevel} and parent_id = #{parentId}
  </select>
+    <update id="updateById">
+        update tb_newbee_mall_goods_category
+        set
+            category_name =  #{categoryName,jdbcType=VARCHAR},
+            category_rank =  #{categoryRank,jdbcType=INTEGER}
+        where   category_id = #{categoryId,jdbcType=BIGINT}
+    </update>
+    <select id="selectByParentId" resultType="java.lang.Integer">
+        select count(*) from tb_newbee_mall_goods_category where parent_id = #{id}
+    </select>
+    <delete id="deleteByIds">
+        delete from tb_newbee_mall_goods_category
+        where category_id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=","> #{id} </foreach>
+    </delete>
 </mapper>

@@ -1,4 +1,4 @@
-package com.geekaca.mall.service.Impl;
+package com.geekaca.mall.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.geekaca.mall.constants.MallConstants;
@@ -6,6 +6,7 @@ import com.geekaca.mall.controller.param.UserOrderParam;
 import com.geekaca.mall.controller.vo.GoodsDTO;
 import com.geekaca.mall.controller.vo.OrderAndItemDTO;
 import com.geekaca.mall.controller.vo.OrderDTO;
+
 import com.geekaca.mall.domain.Order;
 import com.geekaca.mall.domain.OrderAddress;
 import com.geekaca.mall.domain.OrderItem;
@@ -30,9 +31,9 @@ import static com.geekaca.mall.constants.MallConstants.ORDER_STATUS_MAP;
 
 @Service
 public class OrderServiceImpl implements OrderService {
-  @Autowired
+    @Autowired
     private OrderMapper orderMapper;
-  
+
     @Autowired
     private OrderItemMapper orderItemMapper;
 
@@ -132,5 +133,44 @@ public class OrderServiceImpl implements OrderService {
         int count = orderMapper.selectCountByStatus(userOrderParam);
         PageResult pageResult = new PageResult(orderAndItemDTOS, count, userOrderParam.getPageSize(), pageNO);
         return pageResult;
+    }
+
+    @Override
+    public int checkDone(Long[] ids) {
+        return orderMapper.updateDoneByIds(ids);
+    }
+
+    @Override
+    public int checkOut(Long[] ids) {
+        return orderMapper.updateCheckOutByIds(ids);
+    }
+
+    @Override
+    public int closeOrder(Long[] ids) {
+        return orderMapper.updateClosedByIds(ids);
+    }
+
+    @Override
+    public OrderAndItemDTO getOrderDetailByOrderId(Long orderId) {
+        OrderAndItemDTO orderAndItemDTO = orderMapper.selectDetailByOrderId(orderId);
+        orderAndItemDTO.setOrderStatusString(ORDER_STATUS_MAP.get(orderAndItemDTO.getOrderStatus()));
+        return orderAndItemDTO;
+    }
+
+    @Override
+    public OrderAndItemDTO getOrderDetailByOrderNo(String orderNo) {
+        OrderAndItemDTO orderAndItemDTO = orderMapper.selectDetailByOrderNo(orderNo);
+        orderAndItemDTO.setOrderStatusString(ORDER_STATUS_MAP.get(orderAndItemDTO.getOrderStatus()));
+        return orderAndItemDTO;
+    }
+
+    @Override
+    public int cancelOrder(String orderNo) {
+        return orderMapper.updateCancelByOrderNo(orderNo);
+    }
+
+    @Override
+    public int finishOrder(String orderNo) {
+        return orderMapper.updateFinishByOrderNo(orderNo);
     }
 }

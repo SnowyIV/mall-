@@ -1,9 +1,11 @@
 package com.geekaca.mall.controller.admin;
 
 
+import cn.hutool.core.bean.BeanUtil;
 import com.auth0.jwt.interfaces.Claim;
+import com.geekaca.mall.constants.MallConstants;
+import com.geekaca.mall.controller.param.BatchIdParam;
 import com.geekaca.mall.controller.param.GoodsParam;
-import com.geekaca.mall.controller.param.SellStatusIdParam;
 import com.geekaca.mall.domain.GoodsCategory;
 import com.geekaca.mall.domain.GoodsInfo;
 import com.geekaca.mall.exceptions.UserNotLoginException;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,7 +43,7 @@ public class GoodsController {
                        @RequestParam(required = false) @ApiParam(value = "每页条数") Integer pageSize,
                        @RequestParam(required = false) @ApiParam(value = "商品名称") String goodsName,
                        @RequestParam(required = false) @ApiParam(value = "上架状态 0-上架 1-下架") Integer goodsSellStatus) {
-        if (pageNumber == null || pageNumber < 0) {
+        if (pageNumber == null || pageNumber <= 0) {
             pageNumber = 1;
         }
         if (pageSize == null || pageSize < 0) {
@@ -65,22 +68,13 @@ public class GoodsController {
         }
     }
 
-
-//想要写商品下架即删除，但好像不是一个东西
-//    @PostMapping("goods/status/1")
-//    public Result delete(@RequestBody Long id) {
-//        int deleted = goodsService.deleteGoods(id);
-//        if (deleted > 0) {
-//            return ResultGenerator.genSuccessResult("删除成功");
-//        } else {
-//            return ResultGenerator.genFailResult("删除失败");
-//        }
-//    }
-
+    /**
+     * 修改销售状态
+     */
     @RequestMapping(value = "/goods/status/{sellStatus}", method = RequestMethod.PUT)
     @ApiOperation(value = "批量修改销售状态", notes = "批量修改销售状态")
-    public Result updateSellStatus(@RequestBody SellStatusIdParam sellStatusIdParam, @PathVariable("sellStatus") int sellStatus) {
-        int updated = goodsService.updateSellStatus(sellStatusIdParam.getIds(), sellStatus);
+    public Result updateSellStatus(@RequestBody BatchIdParam batchIdParam, @PathVariable("sellStatus") int sellStatus) {
+        int updated = goodsService.updateSellStatus(batchIdParam.getIds(), sellStatus);
         if (updated > 0) {
             return ResultGenerator.genSuccessResult("修改成功");
         } else {
@@ -88,6 +82,9 @@ public class GoodsController {
         }
     }
 
+    /**
+     * 详情
+     */
     @GetMapping("/goods/{id}")
     @ApiOperation(value = "获取单条商品信息", notes = "根据id查询")
     public Result info(@PathVariable("id") Long id) {
@@ -115,17 +112,20 @@ public class GoodsController {
                     goodsInfo.put("firstCategory", firstCategory);
                 }
             }
-
-
         }
         return ResultGenerator.genSuccessResult(goodsInfo);
     }
 
+    /**
+     * 修改
+     */
     @RequestMapping(value = "/goods", method = RequestMethod.PUT)
     @ApiOperation(value = "修改商品信息", notes = "修改商品信息")
     public Result update(@RequestBody @Valid GoodsInfo goodsEditInfo, HttpServletRequest req) {
-        //测试还是说需要创造者，太晚了，明天再研究
         String token = req.getHeader("token");
+        if (token == null) {
+            throw new UserNotLoginException(CODE_USER_NOT_LOGIN, "用户未登陆");
+        }
         Map<String, Claim> stringClaimMap = JwtUtil.verifyToken(token);
         Claim claim = stringClaimMap.get("id");
         String sid = claim.asString();
@@ -142,6 +142,5 @@ public class GoodsController {
             return ResultGenerator.genFailResult("更新失败");
         }
     }
-    }
-
+}
 

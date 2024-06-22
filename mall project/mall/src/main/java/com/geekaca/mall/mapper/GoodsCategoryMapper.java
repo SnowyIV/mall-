@@ -30,4 +30,10 @@ public interface GoodsCategoryMapper {
     List<GoodsCategory> selectByLevelAndParentIds(CategoryParam categoryParam);
 
     int getCountByLevelAndParentIds(CategoryParam categoryParam);
+
+    int updateById(GoodsCategory goodsCategory);
+
+    int selectByParentId(Long id);
+
+    int deleteByIds(Long[] ids);
 }

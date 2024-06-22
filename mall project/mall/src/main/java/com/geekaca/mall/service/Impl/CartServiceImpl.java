@@ -1,4 +1,4 @@
-package com.geekaca.mall.service.Impl;
+package com.geekaca.mall.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.geekaca.mall.controller.vo.GoodsDTO;
@@ -7,7 +7,6 @@ import com.geekaca.mall.mapper.ShoppingCartItemMapper;
 import com.geekaca.mall.service.CartService;
 import com.geekaca.mall.utils.PageResult;
 import org.springframework.stereotype.Service;
-
 
 import javax.annotation.Resource;
 import java.util.List;

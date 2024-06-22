@@ -8,17 +8,15 @@ import java.util.List;
 
 public interface CartService {
 
+    int addToCart(ShoppingCartItem cartItem);
 
+    List<GoodsDTO> getGoodsList(Integer uid);
 
- int addToCart(ShoppingCartItem cartItem);
+    int deleteCartItemById(Integer cartItemId);
 
- List<GoodsDTO> getGoodsList(Integer uid);
+    boolean isUserCartItem(Integer uid, Integer cartItemId);
 
- int deleteCartItemById(Integer cartItemId);
+    int removeByItemIds(Integer[] ids);
 
- boolean isUserCartItem(Integer uid, Integer cartItemId);
-
- int removeByItemIds(Integer[] ids);
-
- PageResult getCartItemList(Integer uid, Integer pageNo, Integer pageSize);
+    PageResult getCartItemList(Integer uid, Integer pageNo, Integer pageSize);
 }

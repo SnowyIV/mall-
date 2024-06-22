@@ -41,7 +41,7 @@ public class IndexConfigController {
         //indexInfoVO.setHotGoodses();
         List<NewGoodsVO> newGoodsList = indexConfigService.getNewGoodsList();
         indexInfoVO.setNewGoodses(newGoodsList);
-        List<RecommendGoodsesVO> recommendGoodsesList = indexConfigService.getRecommendGoodsesList();
+        List<RecommendGoodsesVO> recommendGoodsesList = indexConfigService.getRecommondGoodsList();
         indexInfoVO.setRecommendGoodses(recommendGoodsesList);
       return   ResultGenerator.genSuccessResult(indexInfoVO);
     }

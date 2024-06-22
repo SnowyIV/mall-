@@ -18,8 +18,7 @@
     <sql id="Base_Column_List">
         user_id
         ,nick_name,login_name,
-        password_md5,introduce_sign,is_deleted,
-        locked_flag,create_time
+        introduce_sign,is_deleted
     </sql>
 
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -28,8 +27,6 @@
         from tb_newbee_mall_user
         where user_id = #{userId,jdbcType=BIGINT}
     </select>
-
-
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         delete
         from tb_newbee_mall_user
@@ -38,10 +35,12 @@
     <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="com.geekaca.mall.domain.User"
             useGeneratedKeys="true">
         insert into tb_newbee_mall_user
-        ( login_name
-        , password_md5)
-        values ( #{loginName,jdbcType=VARCHAR}
-               , #{passwordMd5,jdbcType=VARCHAR})
+        ( user_id, nick_name, login_name
+        , password_md5, introduce_sign, is_deleted
+        , locked_flag, create_time)
+        values ( #{userId,jdbcType=BIGINT}, #{nickName,jdbcType=VARCHAR}, #{loginName,jdbcType=VARCHAR}
+               , #{passwordMd5,jdbcType=VARCHAR}, #{introduceSign,jdbcType=VARCHAR}, #{isDeleted,jdbcType=TINYINT}
+               , #{lockedFlag,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP})
     </insert>
     <insert id="insertSelective" keyColumn="user_id" keyProperty="userId" parameterType="com.geekaca.mall.domain.User"
             useGeneratedKeys="true">
@@ -105,17 +104,42 @@
             create_time    = #{createTime,jdbcType=TIMESTAMP}
         where user_id = #{userId,jdbcType=BIGINT}
     </update>
-
+    <select id="selectUser" resultMap="BaseResultMap">
+        select *
+        from tb_newbee_mall_user
+        where login_name = #{loginName}
+          and password_md5 = #{passwordMd5}
+          and locked_flag = 0
+    </select>
     <select id="selectCountByLoginName" resultType="java.lang.Integer">
         select count(*)
         from tb_newbee_mall_user
         where login_name = #{loginName}
     </select>
-    <select id="selectByLoginNamePasswd" resultMap="BaseResultMap">
-        SELECT *
-        FROM tb_newbee_mall_user
-        WHERE login_name = #{loginName}
-          AND password_md5 = #{passwordMd5}
-          and locked_flag = 0
+    <insert id="insertUser" keyColumn="user_id" keyProperty="userId" parameterType="com.geekaca.mall.domain.User"
+            useGeneratedKeys="true">
+        insert into tb_newbee_mall_user
+            (login_name, password_md5)
+        values (#{loginName,jdbcType=VARCHAR}, #{passwordMd5,jdbcType=VARCHAR})
+    </insert>
+    <update id="updateUserInfo">
+        update tb_newbee_mall_user
+        set nick_name      = #{nickName,jdbcType=VARCHAR},
+            introduce_sign = #{introduceSign,jdbcType=VARCHAR},
+            password_md5   = #{passwordMd5,jdbcType=VARCHAR}
+            where user_id = #{userId,jdbcType=BIGINT}
+    </update>
+    <select id="selectAllUser" resultMap="BaseResultMap">
+        select * from tb_newbee_mall_user
+        order by create_time desc limit #{start}, #{pageSize}
     </select>
+    <select id="selectCounts" resultType="java.lang.Integer">
+        select count(*) from tb_newbee_mall_user
+    </select>
+    <update id="updateUserLock">
+        update tb_newbee_mall_user
+        set locked_flag = #{lockedFlag}
+        where user_id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=","> #{id} </foreach>
+    </update>
 </mapper>

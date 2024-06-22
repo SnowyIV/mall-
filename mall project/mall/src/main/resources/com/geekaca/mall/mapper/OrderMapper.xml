@@ -148,21 +148,95 @@
         where order_no = #{orderNo,jdbcType=VARCHAR}
     </update>
     <select id="selectByStatus" resultMap="OrderWithItems">
-        SELECT torder.create_time, torder.order_id, torder.user_id, torder.total_price, torder.order_status, torder.order_no, torder.pay_type, item.order_item_id, item.goods_name, item.goods_cover_img, item.goods_count, item.selling_price
+        SELECT torder.create_time, torder.order_id, torder.user_id, torder.total_price, torder.order_status,
+        torder.order_no, torder.pay_type, item.order_item_id, item.goods_name, item.goods_cover_img, item.goods_count,
+        item.selling_price
         FROM tb_newbee_mall_order torder, tb_newbee_mall_order_item item
         WHERE torder.order_id = item.order_id
-        <if test="uid != null and uid != ''"> AND user_id = #{uid} </if>
-        <if test="orderStatus != null"> and order_status = #{orderStatus} </if>
+        <if test="uid != null and uid != ''">AND user_id = #{uid}</if>
+        <if test="orderStatus != null">and order_status = #{orderStatus}</if>
         ORDER BY create_time DESC limit #{pageNum}, #{pageSize}
     </select>
     <!--     根据uid和订单状态查询用户的订单数量 -->
     <select id="selectCountByStatus" resultType="java.lang.Integer">
         SELECT count(*) FROM tb_newbee_mall_order
         <where>
-            <if test="uid != null and uid != ''"> AND user_id = #{uid} </if>
+            <if test="uid != null and uid != ''">AND user_id = #{uid}</if>
             <if test="orderStatus != null">
                 and order_status = #{orderStatus}
             </if>
         </where>
     </select>
+    <select id="selectDetailByOrderId" resultMap="OrderWithItems">
+        SELECT torder.create_time,
+               torder.order_id,
+               torder.user_id,
+               torder.total_price,
+               torder.order_status,
+               torder.order_no,
+               torder.pay_type,
+               item.order_item_id,
+               item.goods_id,
+               item.goods_name,
+               item.goods_cover_img,
+               item.goods_count,
+               item.selling_price
+        FROM tb_newbee_mall_order torder,
+             tb_newbee_mall_order_item item
+        WHERE torder.order_id = item.order_id
+          and torder.order_id = #{orderId}
+    </select>
+    <select id="selectDetailByOrderNo" resultMap="OrderWithItems">
+        SELECT torder.create_time,
+               torder.order_id,
+               torder.user_id,
+               torder.total_price,
+               torder.order_status,
+               torder.order_no,
+               torder.pay_type,
+               item.order_item_id,
+               item.goods_id,
+               item.goods_name,
+               item.goods_cover_img,
+               item.goods_count,
+               item.selling_price
+        FROM tb_newbee_mall_order torder,
+             tb_newbee_mall_order_item item
+        WHERE torder.order_id = item.order_id
+          and torder.order_no = #{orderNo}
+    </select>
+    <update id="updateDoneByIds">
+        update tb_newbee_mall_order
+        set order_status = 2
+        where order_id in
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+    <update id="updateCheckOutByIds">
+        update tb_newbee_mall_order
+        set order_status = 3
+        where order_id in
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+    <update id="updateClosedByIds">
+        update tb_newbee_mall_order
+        set order_status = -3
+        where order_id in
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+    <update id="updateCancelByOrderNo">
+        update tb_newbee_mall_order
+        set order_status = -1
+        where order_no = #{orderNo}
+    </update>
+    <update id="updateFinishByOrderNo">
+        update tb_newbee_mall_order
+        set order_status = 4
+        where order_no = #{orderNo}
+    </update>
 </mapper>

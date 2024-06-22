@@ -9,5 +9,5 @@ public class NewGoodsVO {
     private Double sellingPrice;
     private String goodsCoverImg;
 
-    private String configName;
+    private String goodsName;
 }

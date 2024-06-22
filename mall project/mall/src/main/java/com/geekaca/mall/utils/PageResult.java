@@ -1,7 +1,6 @@
 package com.geekaca.mall.utils;
 
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,8 +10,8 @@ import java.util.List;
  *
  
  */
-
 public class PageResult<T> implements Serializable {
+
     @ApiModelProperty("总记录数")
     private int totalCount;
 

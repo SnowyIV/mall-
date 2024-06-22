@@ -7,6 +7,7 @@ import com.geekaca.mall.controller.param.OrderParam;
 import com.geekaca.mall.controller.param.UserOrderParam;
 import com.geekaca.mall.controller.vo.GoodsDTO;
 import com.geekaca.mall.controller.vo.NewBeeMallShoppingCartItemVO;
+import com.geekaca.mall.controller.vo.OrderAndItemDTO;
 import com.geekaca.mall.controller.vo.OrderDTO;
 import com.geekaca.mall.domain.Order;
 import com.geekaca.mall.exceptions.MallException;
@@ -36,7 +37,7 @@ public class OrderController {
 private OrderService orderService;
 
     @GetMapping("/shop-cart/settle")
-    public Result<List<NewBeeMallShoppingCartItemVO>> settle(HttpServletRequest req,Integer[] cartItemIds){
+    public Result<List<NewBeeMallShoppingCartItemVO>> createOrder(HttpServletRequest req,Integer[] cartItemIds){
         String token = req.getHeader("token");
         if (token == null) {
             throw new UserNotLoginException(CODE_USER_NOT_LOGIN, "用户未登录");
@@ -54,16 +55,22 @@ private OrderService orderService;
         OrderDTO orderDTO = new  OrderDTO();
         orderDTO.setUserId(uid);
         orderDTO.setCartItemIds(cartItemIds);
-//        Order order = orderService.createOrder(orderDTO);
-
+        /**
+         *
+         * 查询选中的商品列表
+         * 手头有数据：
+         * uid 和 cartItemIds
+         * 目标：
+         * data
+         * List<GoodsDTO>
+         */
         List<GoodsDTO> goodsDTOList = orderService.selectGoodsListByUidAndItemIds(uid, orderDTO.getCartItemIds());
-        if (goodsDTOList != null){
-            return  ResultGenerator.genSuccessResult(goodsDTOList);
-        }else {
-            return  ResultGenerator.genFailResult("创建订单失败");
+        if (goodsDTOList != null) {
+            return ResultGenerator.genSuccessResult(goodsDTOList);
+        } else {
+            return ResultGenerator.genFailResult("订单生成失败");
         }
     }
-
     @PostMapping("/saveOrder")
     public Result saveOrder(@RequestBody OrderParam orderParam, HttpServletRequest req) {
         String token = req.getHeader("token");
@@ -130,7 +137,34 @@ private OrderService orderService;
         userOrderParam.setPageSize(pageSize);
         PageResult pageResult = orderService.getOrderList(userOrderParam);
         return ResultGenerator.genSuccessResult(pageResult);
+    }
 
+    @GetMapping("/order/{orderNo}")
+    @ApiOperation(value = "订单详情接口", notes = "传参为订单号")
+    public Result<OrderAndItemDTO> orderDetail(@ApiParam(value = "订单号") @PathVariable("orderNo") String orderNo) {
+        return ResultGenerator.genSuccessResult(orderService.getOrderDetailByOrderNo(orderNo));
+    }
+
+    @PutMapping("/order/{orderNo}/cancel")
+    @ApiOperation(value = "订单取消接口", notes = "传参为订单号")
+    public Result cancelOrder(@ApiParam(value = "订单号") @PathVariable("orderNo") String orderNo) {
+        int result = orderService.cancelOrder(orderNo);
+        if (result > 0) {
+            return ResultGenerator.genSuccessResult();
+        } else {
+            return ResultGenerator.genFailResult("取消失败");
+        }
+    }
+
+    @PutMapping("/order/{orderNo}/finish")
+    @ApiOperation(value = "确认收货接口", notes = "传参为订单号")
+    public Result finishOrder(@ApiParam(value = "订单号") @PathVariable("orderNo") String orderNo) {
+        int result = orderService.finishOrder(orderNo);
+        if (result > 0) {
+            return ResultGenerator.genSuccessResult();
+        } else {
+            return ResultGenerator.genFailResult("取消失败");
+        }
     }
 }
 
