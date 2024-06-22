@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="com.geekaca.employee.mapper.EmployeeMapper">
+    <resultMap id="employeeResultMap" type="EmployeeMsg">
+        <result column="job_id" property="jobid"/>
+        <result column="dept_id" property="deptid"/>
+    </resultMap>
+    <insert id="addDept">
+        insert into  dept(id,dname, loc)
+        values (#{id},#{dname}, #{loc});
+    </insert>
+    <insert id="addEmployeeMsg">
+        insert into  emp(id, ename, job_id, mgr, joindate, salary, bonus, dept_id)
+        values (#{id},#{ename}, #{jobid},#{mgr},#{joindate},#{salary},#{bonus},#{deptid});
+    </insert>
+    <update id="update">
+        update emp SET salary = salary - 1000
+        where job_id = #{jobid};
+    </update>
+
+    <select id="selectAll" resultType="com.geekaca.employee.pojo.EmployeeMsg">
+        select * from emp;
+    </select>
+    <select id="selectAll1" resultType="com.geekaca.employee.pojo.Dept">
+        select * from dept;
+    </select>
+    <select id="selectJobId" resultType="com.geekaca.employee.pojo.EmployeeMsg">
+        select * from emp
+        where job_id = #{jobid}
+    </select>
+
+
+</mapper>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+
+针对一个表的操作
+创建一个单独的mapper接口类，以及对应的mapperXML文件
+    namespace:名称空间
+    指向对应的mapper类
+-->
+
+<mapper namespace="com.geekaca.mybatis.mapper.BrandMapper">
+
+    <!--
+        数据库表的字段名称  和  实体类的属性名称 不一样，则不能自动封装数据
+            * 起别名：对不一样的列名起别名，让别名和实体类的属性名一样
+                * 缺点：每次查询都要定义一次别名
+                    * sql片段
+                        * 缺点：不灵活
+            * resultMap：
+                1. 定义<resultMap>标签
+                2. 在<select>标签中，使用resultMap属性替换 resultType属性
+
+    -->
+    <!--
+    结果映射 配置
+        id：唯一标识
+        type：映射的类型，支持别名
+    -->
+    <resultMap id="brandResultMap" type="Brand">
+        <!--
+            id：完成主键字段的映射
+                column：表的列名
+                property：实体类的属性名
+            result：完成一般字段的映射
+                column：表的列名
+                property：实体类的属性名
+        -->
+        <result column="brand_name" property="bdName"/>
+        <result column="company_name" property="companyName"/>
+    </resultMap>
+    <insert id="addBrand">
+        insert into tb_brand(brand_name, company_name, ordered, description, status)
+        values (#{bdName}, #{companyName}, #{ordered}, #{description}, #{brandStatus});
+    </insert>
+    <update id="update">
+        update tb_brand
+        set
+            brand_name = #{bdName},
+            company_name = #{companyName},
+            ordered = #{ordered},
+            description = #{description},
+            status = #{brandStatus}
+        where id = #{id};
+    </update>
+    <delete id="deleteById">
+        delete from tb_brand where id = #{id};
+    </delete>
+
+    <!--
+    resultType
+    resultMap
+    设置 返回的结果 用什么接收
+    -->
+    <select id="selectAll" resultMap="brandResultMap">
+        select * from tb_brand;
+    </select>
+    <select id="selectById" resultMap="brandResultMap">
+        select * from tb_brand
+        where id = #{id}
+    </select>
+
+
+</mapper>

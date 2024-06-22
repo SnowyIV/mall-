@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ide-eval-resetter-2.1.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ide-eval-resetter/lib/ide-eval-resetter-2.1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

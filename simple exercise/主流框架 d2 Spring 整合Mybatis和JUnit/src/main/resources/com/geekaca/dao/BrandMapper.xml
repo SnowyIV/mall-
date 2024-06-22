@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geekaca.dao.BrandMapper">
+
+
+<!-- 结果集映射 -->
+    <resultMap id="brandResultMap" type="com.geekaca.domain.Brand">
+        <id column="id" property="id" />
+        <result column="brand_name" property="brandName"></result>
+        <result column="company_name" property="companyName"></result>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+    <insert id="addBrand">
+        insert into tb_brand values(null, #{brandName}, #{companyName}, #{ordered}, #{description}
+        ,#{status})
+    </insert>
+    <update id="updateById">
+
+    </update>
+    <delete id="deleteById">
+        delete from tb_brand where id = #{id}
+    </delete>
+
+    <select id="selectAll" resultMap="brandResultMap">
+        select * from tb_brand
+    </select>
+    <select id="selectById" resultMap="brandResultMap">
+        select * from tb_brand where id = #{id}
+    </select>
+    <select id="selectByName" resultMap="brandResultMap">
+        select * from tb_brand where brandName = #{brandName}
+    </select>
+
+
+</mapper>

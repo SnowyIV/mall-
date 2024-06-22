@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--     设置的作用
+            可以在 mapperXML中直接用pojo 类名字 引用，省略包名
+            甚至 可以不区分大小写
+    -->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+    <typeAliases>
+        <package name="com.geekaca.employee.pojo"/>
+    </typeAliases>
+
+    <!--
+    environments：配置数据库连接环境信息。
+    可以配置多个environment
+    ，通过default属性切换不同的environment
+    -->
+    <environments default="development">
+        <environment id="development">
+            <!--            事务管理器 由JDBC提供-->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--数据库连接信息   -->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/employee?serverTimezone=UTC&amp;useSSL=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--数据库连接信息-->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/employee?serverTimezone=UTC&amp;useSSL=true"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--Mapper代理方式  推荐-->
+        <package name="com.geekaca.employee.mapper"/>
+
+    </mappers>
+
+
+</configuration>

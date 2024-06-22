@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geekaca.employeesys.mapper.SalarygradeMapper">
+
+    <resultMap id="BaseResultMap" type="com.geekaca.employeesys.domain.Salarygrade">
+            <id property="grade" column="grade" jdbcType="INTEGER"/>
+            <result property="losalary" column="losalary" jdbcType="INTEGER"/>
+            <result property="hisalary" column="hisalary" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        grade,losalary,hisalary
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from salarygrade
+        where  grade = #{grade,jdbcType=INTEGER} 
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from salarygrade
+        where  grade = #{grade,jdbcType=INTEGER} 
+    </delete>
+    <insert id="insert" keyColumn="grade" keyProperty="grade" parameterType="com.geekaca.employeesys.domain.Salarygrade" useGeneratedKeys="true">
+        insert into salarygrade
+        ( grade,losalary,hisalary
+        )
+        values (#{grade,jdbcType=INTEGER},#{losalary,jdbcType=INTEGER},#{hisalary,jdbcType=INTEGER}
+        )
+    </insert>
+    <insert id="insertSelective" keyColumn="grade" keyProperty="grade" parameterType="com.geekaca.employeesys.domain.Salarygrade" useGeneratedKeys="true">
+        insert into salarygrade
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="grade != null">grade,</if>
+                <if test="losalary != null">losalary,</if>
+                <if test="hisalary != null">hisalary,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                <if test="grade != null">#{grade,jdbcType=INTEGER},</if>
+                <if test="losalary != null">#{losalary,jdbcType=INTEGER},</if>
+                <if test="hisalary != null">#{hisalary,jdbcType=INTEGER},</if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.geekaca.employeesys.domain.Salarygrade">
+        update salarygrade
+        <set>
+                <if test="losalary != null">
+                    losalary = #{losalary,jdbcType=INTEGER},
+                </if>
+                <if test="hisalary != null">
+                    hisalary = #{hisalary,jdbcType=INTEGER},
+                </if>
+        </set>
+        where   grade = #{grade,jdbcType=INTEGER} 
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.geekaca.employeesys.domain.Salarygrade">
+        update salarygrade
+        set 
+            losalary =  #{losalary,jdbcType=INTEGER},
+            hisalary =  #{hisalary,jdbcType=INTEGER}
+        where   grade = #{grade,jdbcType=INTEGER} 
+    </update>
+</mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.geekaca.employee.mapper.DeptMapper">
+    <resultMap id="DeptRSMap" type="Dept">
+        <id property="id" column="dept_id"/>
+        <result column="dname" property="dName"/>
+        <result column="loc" property="loc"/>
+        <!--        一对多
+
+        -->
+        <collection property="empList" ofType="EmployeeMSg">
+            <id column="id" property="id"/>
+            <result column="ename" property="ename"/>
+            <result column="job_id" property="jobid"/>
+            <result column="dept_id" property="deptid"/>
+            <result column="salary" property="salary"/>
+        </collection>
+
+    </resultMap>
+    <select id="selectDeptById" resultType="com.geekaca.employee.pojo.Dept">
+        SELECT
+            dept.dname ,
+            dept.loc,
+            dept.id as dept_id,
+            emp.ename,
+            emp.id ,
+            emp.salary
+        FROM
+            dept,
+            emp
+        WHERE
+            dept.id = emp.dept_id AND dept.id = #{deptid}
+    </select>
+
+
+</mapper>
