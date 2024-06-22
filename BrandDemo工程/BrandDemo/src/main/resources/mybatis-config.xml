@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="druid.properties">
+
+    </properties>
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+    <typeAliases>
+        <package name="com.geekaca.web.domain"/>
+    </typeAliases>
+    
+    <!--
+    environments：配置数据库连接环境信息。可以配置多个environment，通过default属性切换不同的environment
+    -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--数据库连接信息-->
+                <property name="driver" value="${jdbc.driverClassName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--数据库连接信息-->
+                <property name="driver" value="${jdbc.driverClassName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--Mapper代理方式-->
+        <package name="com.geekaca.web.dao"/>
+
+    </mappers>
+
+
+</configuration>
